@@ -1195,11 +1195,16 @@ span.plain-text  {
 	left: 0;
 }
 #flexslider2 .flex-direction-nav a {
-	top: 20px;
+	margin: 0 0 0;
+	top: 0;
 	width: 120px;
 	height: 100%;
 	font-size:0px;
 	color: transparent;
+}
+#flexslider2 .flex-direction-nav .flex-disabled {
+	opacity: 0.3!important;
+	z-index: 2!important;
 }
 #flexslider2 .flex-direction-nav a:before {
 	position: absolute;
