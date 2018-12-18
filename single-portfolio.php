@@ -50,7 +50,7 @@ get_header(); ?>
               <ul class="slides">
                 <?php $j=1; while(the_repeater_field('project_gallery')): ?>
                   <?php $image = wp_get_attachment_image_src(get_sub_field('project_images'), 'lightbox'); ?>
-                  <li data-id="ggimage<?php echo $j?>">
+                  <li data-id="ggimage<?php echo $j?>" class="<?php echo ($j==1) ? 'flex-active-slide':''?>">
                     <a class="colorbox" rel="gal" href="<?php echo $image[0]; ?>"><img src="<?php echo $image[0]; ?>" alt="<?php  the_sub_field('title');?>" rel="" /></a>
                   </li>
                 <?php $j++; endwhile; ?>
@@ -61,12 +61,12 @@ get_header(); ?>
               <div id="flexcarousel" class="flexslider cf">
                 <?php  if(get_field('project_gallery')) { ?>
                   <ul class="slides">
-                    <?php while(the_repeater_field('project_gallery')): ?>
+                    <?php $k=1; while(the_repeater_field('project_gallery')): ?>
                       <?php $thumb = wp_get_attachment_image_src(get_sub_field('project_images'), 'gallery-thumbnail'); ?>
-                      <li>
+                      <li data-index="<?php echo $k-1?>" class="<?php echo ($k==1) ? 'active-slide':''?>">
                         <img src="<?php echo $thumb[0]; ?>" alt="<?php  the_sub_field('title');?>" rel="" />
                       </li>
-                    <?php endwhile; ?>
+                    <?php $k++; endwhile; ?>
                   </ul>
                 <?php } ?>  
               </div>

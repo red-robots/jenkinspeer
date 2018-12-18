@@ -14,7 +14,6 @@ Version: 2.0
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 @import url('css/flexslider.css');
-@import url('css/flexslider-rtl-min.css');
 @import url('css/colorbox.css');
 
 /* =Reset
@@ -1148,9 +1147,19 @@ span.plain-text  {
 #flexslider2.flexslider li {
 	height: 430px;
 }
+#flexcarousel.flexslider ul {
+	margin-right: -5px;
+	margin-left: -5px;
+	box-sizing: border-box;
+}
 #flexcarousel.flexslider li {
 	opacity: 0.5;
-	margin-right: 10px!important;
+	margin-right: 0!important;
+	margin-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	box-sizing: border-box;
+	width: 16.66666%;
 }
 #flexcarousel.flexslider li.flex-active-slide {
 	opacity: 1;
@@ -1179,18 +1188,54 @@ span.plain-text  {
 	margin: 0 auto;
 	padding-right: 0;
 }
-.gallery-wrapper #flexslider2 .flex-direction-nav a {
-	width: 100px;
-	height: 100px;
+#flexslider2 .flex-direction-nav a {
+	top: 20px;
+	width: 120px;
+	height: 100%;
 	font-size:0px;
 	color: transparent;
+}
+#flexslider2 .flex-direction-nav a:before {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+#flexslider2 .flex-direction-nav a.flex-next:before {
+	right: 0;
+}
+#flexslider2 .flex-direction-nav a.flex-prev:before {
+	left: 0;
 }
 #flexslider2.flexslider,
 #flexslider2.flexslider li {
 	height: 250px;
 }
-
-
+#flexcarousel.flexslider li {
+	cursor: pointer;
+	display: inline-block;
+	float: left;
+}
+#flexcarousel.flexslider li.active-slide {
+	opacity: 1;
+}
+#cboxOverlay {
+	background-image:none;
+	background-color: rgb(0,0,0,.8);
+}
+#cboxContent {
+	border:10px solid #FFF;
+	border-bottom-width: 5px;
+}
+#cboxTopRight,
+#cboxTopCenter,
+#cboxTopLeft,
+#cboxBottomCenter,
+#cboxBottomRight,
+#cboxBottomLeft,
+#cboxMiddleRight,
+#cboxMiddleLeft {
+	background: none;
+}
 /*
  = Firm
 -------------------------------------------------------------- */
@@ -3017,6 +3062,9 @@ img#wpstats {
 	    overflow: hidden;
 		width: 1045px;
 	}
+	#flexcarousel.flexslider li {
+		width: 16.66666%;
+	}
 }
 
 @media screen and (min-width: 1000px) {
@@ -3036,6 +3084,9 @@ img#wpstats {
 	#flexslider2.flexslider,
 	#flexslider2.flexslider li {
 		height: 420px;
+	}
+	#flexcarousel.flexslider li {
+		width: 16.66666%;
 	}
 }
 

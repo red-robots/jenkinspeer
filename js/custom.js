@@ -92,22 +92,39 @@ $container.imagesLoaded( function() {
  		maxWidth: "100%"
  	});
 
-	$('#flexcarousel').flexslider({
-		animation: "slide",
-		controlNav: false,
-		animationLoop: false,
-		slideshow: false,
-		itemWidth: 100,
-		itemMargin: 5,
-		asNavFor: '#flexslider2'
-	});
+	// $('#flexcarousel').flexslider({
+	// 	animation: "slide",
+	// 	controlNav: false,
+	// 	animationLoop: false,
+	// 	slideshow: false,
+	// 	itemWidth: 100,
+	// 	itemMargin: 5,
+	// 	asNavFor: '#flexslider2'
+	// });
 
 	$('#flexslider2').flexslider({
 		animation: "slide",
 		controlNav: false,
 		animationLoop: false,
-		slideshow: false
+		slideshow: false,
+		after: function(slider){
+	        var index = slider.currentSlide;
+	        $("#flexcarousel li").removeClass("active-slide");
+	        $("#flexcarousel li").eq(index).addClass('active-slide');
+	    }
 	});
+
+	$(document).on('click', '#flexcarousel li', function(e) {
+	    e.preventDefault();
+	    $homeSlider = $('#flexslider2');
+	    var num = $(this).attr('data-index');
+	   	var slideIndex = parseInt(num);
+	    $homeSlider.flexslider(slideIndex);
+	    $("#flexcarousel li").removeClass('active-slide');
+	    $(this).addClass('active-slide');
+	    return false; // IE9 hack
+	});
+
 
 });// END #####################################    END	
 	
