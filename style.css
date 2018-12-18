@@ -1110,16 +1110,15 @@ h1.main-proj-title {
 span.plain-text  {
 	color: #666;	
 }
-.rightdiv {
-	width: 50%;
-	float: right;
-}
 .gallery-wrapper,
 .gallery-wrapper .flexslider {
 	width: 100%;
 	float: left;
 	position: relative;
 	margin: 0 0;
+}
+.gallery-wrapper {
+	margin-top: 10px;
 }
 .gallery-wrapper .flexslider {
 	border: none;
