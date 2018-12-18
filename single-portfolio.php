@@ -64,7 +64,7 @@ get_header(); ?>
                     <?php $k=1; while(the_repeater_field('project_gallery')): ?>
                       <?php $thumb = wp_get_attachment_image_src(get_sub_field('project_images'), 'gallery-thumbnail'); ?>
                       <li data-index="<?php echo $k-1?>" class="<?php echo ($k==1) ? 'active-slide':''?>">
-                        <img src="<?php echo $thumb[0]; ?>" alt="<?php  the_sub_field('title');?>" rel="" />
+                          <img src="<?php echo $thumb[0]; ?>" alt="<?php  the_sub_field('title');?>" rel="" />
                       </li>
                     <?php $k++; endwhile; ?>
                   </ul>

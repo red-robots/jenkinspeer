@@ -1187,6 +1187,13 @@ span.plain-text  {
 	margin: 0 auto;
 	padding-right: 0;
 }
+#flexcarousel.flexslider li img {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	top: 0;
+	left: 0;
+}
 #flexslider2 .flex-direction-nav a {
 	top: 20px;
 	width: 120px;
