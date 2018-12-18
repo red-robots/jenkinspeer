@@ -92,6 +92,15 @@ function twentytwelve_scripts_styles() {
 	//fontawesome
 	wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/8f931eabc1.js', array(), '1.0' );
 
+	//jquery plugins
+	wp_enqueue_script( 'mousewheel', get_template_directory_uri() . '/js/jquery.mousewheel.js', array(), '3.0.6', true);
+
+	//flexslider 2
+	wp_enqueue_script( 'flexslider2', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array(), '2.7.1', true);
+
+	//Colorbox
+	wp_enqueue_script( 'colorbox', get_template_directory_uri() . '/js/jquery.colorbox-min.js', array(), '1.3.14', true);
+
 	$font_url = twentytwelve_get_font_url();
 	if ( ! empty( $font_url ) )
 		wp_enqueue_style( 'twentytwelve-fonts', esc_url_raw( $font_url ), array(), null );

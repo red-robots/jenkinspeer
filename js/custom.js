@@ -82,19 +82,40 @@ var $container = $('#container').isotope({
 $container.imagesLoaded( function() {
   $container.isotope('layout');
 });
+
+
 	
-	
+
+	$('a.colorbox').colorbox({
+ 		rel:'gal',
+ 		scalePhotos: true,
+ 		maxWidth: "100%"
+ 	});
+
+	$('#flexcarousel').flexslider({
+		animation: "slide",
+		controlNav: false,
+		animationLoop: false,
+		slideshow: false,
+		itemWidth: 100,
+		itemMargin: 5,
+		asNavFor: '#flexslider2'
+	});
+
+	$('#flexslider2').flexslider({
+		animation: "slide",
+		controlNav: false,
+		animationLoop: false,
+		slideshow: false
+	});
+
 });// END #####################################    END	
 	
 	
 $(window).load(function () {
-	
-	
-	
 
-	
-		// set up and load the front page carousel
-  $('#mycarousel').jcarousel({
+	// set up and load the front page carousel
+  	$('#mycarousel').jcarousel({
     	wrap: 'circular',
 		auto: 0,
 		scroll: 3,
@@ -106,32 +127,29 @@ $(window).load(function () {
 	
 	// WE added a css of display: none to the list itme so it doesn't flicker or look weird when it's loading
 	// But we need to remove that class on load to see the carousel 
- $('ul#mycarousel li a').removeClass('.hideitemonload');
-		
-		
+ 	$('ul#mycarousel li a').removeClass('.hideitemonload');
 		
 	
+	// var gallery = $('#gallery').galleriffic('#navigation', {
+	// 	delay:                2000,
+	// 	numThumbs:            6,
+	// 	imageContainerSel:    '#slideshow',
+	// 	controlsContainerSel: '#controls',
+	// 	titleContainerSel:    '#image-title',
+	// 	descContainerSel:     '#image-desc',
+	// 	downloadLinkSel:      '#download-link',
+	// 	fixedNavigation:	   true,
+	// 	galleryKeyboardNav:	   true,
+	// 	autoPlay:			   false
+	// });
 	
-	var gallery = $('#gallery').galleriffic('#navigation', {
-		delay:                2000,
-		numThumbs:            6,
-		imageContainerSel:    '#slideshow',
-		controlsContainerSel: '#controls',
-		titleContainerSel:    '#image-title',
-		descContainerSel:     '#image-desc',
-		downloadLinkSel:      '#download-link',
-		fixedNavigation:	   true,
-		galleryKeyboardNav:	   true,
-		autoPlay:			   false
-	});
+	// gallery.onFadeOut = function() {
+	// 	$('#details').fadeOut('fast');
+	// };
 	
-	gallery.onFadeOut = function() {
-		$('#details').fadeOut('fast');
-	};
-	
-	gallery.onFadeIn = function() {
-		$('#details').fadeIn('fast');
-	};
+	// gallery.onFadeIn = function() {
+	// 	$('#details').fadeIn('fast');
+	// };
 	
 });// END #####################################    END	
 	
