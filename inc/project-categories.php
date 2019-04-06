@@ -1,0 +1,41 @@
+<?php  
+// $arg = array(
+// 	'taxonomy' => 'portcats',
+//     'hide_empty' => true,
+//     'parent' => 0
+// );
+// $categories = get_categories($arg);
+$home_page_id = 521;
+$categories = get_field('featured_categories',$home_page_id);
+if($categories) { ?>
+<div class="portfolio-categories-list clear">
+	<div class="flexrow clear">
+	<?php foreach ($categories as $cat) { 
+		$cat_name = $cat->name;
+		$catImg = get_field('category_featured_image_to_show_on_homepage',$cat);
+		if(!$catImg){
+			$catImg = get_field('category_featured_image',$cat);
+		}
+		$catLink = get_term_link($cat);
+		if($catImg) {
+			$catImgSrc = $catImg['sizes']['medium'];
+			$cat_alt = $catImg['title'];
+		} else {
+			$catImgSrc = get_bloginfo('template_url').'/images/noimage.gif';
+			$cat_alt = '';
+		}
+		?>
+		<div class="portcat flexcol">
+			<div class="inside clear">
+				<a href="<?php echo $catLink; ?>">
+					<span class="imagebg" style="background-image:url('<?php echo $catImgSrc;?>');"></span>
+					<img src="<?php echo $catImgSrc ?>" alt="<?php echo $cat_alt ?>" />
+					<span class="catname"><span><?php echo $cat_name; ?></span></span>
+				</a>
+			</div>
+		</div>	
+	<?php } ?>
+	</div>
+</div>
+<?php } ?>
+

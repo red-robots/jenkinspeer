@@ -18,7 +18,7 @@ $categoryFeaturedImage = $image['sizes'][ $size ];
 
 
 
-<div class="home-row1">
+<div class="home-row1 clear">
  <!--
  #####################################
  

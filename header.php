@@ -50,34 +50,36 @@ var template_url = "<?php bloginfo('template_url'); ?>";
 
   gtag('config', 'UA-132474660-1');
 </script>
-
+<script defer src="<?php bloginfo( 'template_url' ); ?>/assets/svg-with-js/js/fontawesome-all.min.js"></script>
 	
 	
 </head>
 
-<body>
-<div id="page">
-	<div id="header">
-    
-		<?php if(is_home()) { ?>
-            <h1 class="logo"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
-        <?php } else { ?>
-            <div class="logo"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></div>
-        <?php } ?>
-        
-        <?php get_search_form(); ?>
-        
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h3 class="menu-toggle"><?php _e( 'Menu', 'twentytwelve' ); ?></h3>
-			
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
+<body <?php body_class(); ?>>
+<div id="page" class="pagewrap clear">
+	<div id="header" class="header-wrapper wrapper clear">
+    	<div class="row clear">
+    		<div class="left-column">
+				<?php if(is_home()) { ?>
+		            <h1 class="logo"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+		        <?php } else { ?>
+		            <div class="logo"><a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>" /></a></div>
+		        <?php } ?>
+	        </div>
+
+	        <div class="right-column">
+				<nav id="site-navigation" class="main-navigation" role="navigation">
+					<span class="menu-toggle"><span id="toggleMenu"><?php _e( 'Menu', 'twentytwelve' ); ?><i></i></span></span>
+					
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu','container_class'=>'main-menu-wrapper' ) ); ?>
+				</nav><!-- #site-navigation -->
+			</div>
+		</div>
 
 	</div><!-- #header -->
 
+	<?php if (is_home() || is_front_page()) { ?>
+		<?php get_template_part('inc/latest-projects'); ?>
+	<?php } ?>
 
-<div class="clear"></div>
-
-<?php if(!is_front_page()) : ?>
-<div id="main" class="wrapper">
-<?php endif; ?>
+<div class="page-container wrapper">
