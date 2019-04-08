@@ -20,27 +20,25 @@ $wp_query->query(array(
 				)
 			 )
 ));
-while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
 
-
-
-<div class="viewall-div">
-    <a href="<?php the_permalink(); ?>?cat=<?php echo $term->term_id; ?>">
-		<?php  if ( has_post_thumbnail() ) { ?>
-        	<div class="thumbnail"><?php the_post_thumbnail('large-thumbnail'); ?></div>
-        <?php } else { ?>
-        	<div class="thumbnail"><img src="<?php bloginfo('template_url'); ?>/images/default-thumb.png" width="130px" height="130px"/></div>
-        <?php } ?>
-        
-    
-    
-    <h2><?php the_title(); ?></h2>
-    <div class="client"><?php the_field('second_title'); ?></div><!-- client -->
-    
-    </a>
- </div><!-- project post div -->
-  
- 
-
- <?php endwhile;   ?>
- <?php  wp_reset_postdata(); ?>
+if($wp_query) { ?>
+<div class="portfolio-blocks-wrapper clear">
+    <div class="row clear">
+		<?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+		<div class="viewall-div blocks">
+			<div class="inside clear">
+			    <a href="<?php the_permalink(); ?>?cat=<?php echo $term->term_id; ?>">
+					<?php  if ( has_post_thumbnail() ) { ?>
+			        	<div class="thumbnail"><?php the_post_thumbnail('large-thumbnail'); ?></div>
+			        <?php } else { ?>
+			        	<div class="thumbnail"><img src="<?php bloginfo('template_url'); ?>/images/default-thumb.png" width="130px" height="130px"/></div>
+			        <?php } ?>
+			    	<h2><?php the_title(); ?></h2>
+		   		 	<div class="client"><?php the_field('second_title'); ?></div><!-- client -->
+		    	</a>
+	    	</div>
+	 	</div><!-- project post div -->
+	 <?php endwhile; wp_reset_postdata();  ?>
+	</div>
+</div>
+<?php } ?>

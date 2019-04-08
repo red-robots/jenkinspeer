@@ -755,13 +755,16 @@ font-weight: 400italic;
 }
 .category_description {
 	width: 100%;
-	height: 100%;
+	height: auto;
 	position: absolute;
-	top: 0px ;
+	bottom: 0;
 	left: 0px;
 	background-color: rgba(255,255,255, .7)	;
 	font-size: 12px;
 	line-height: 1.9;
+	@media screen and (min-width: $tabwidth) {
+		height: 100%;
+	}
 }
 .padding20 {
 	padding: 20px;	
@@ -815,7 +818,7 @@ h1.category-title {
 	font-size: 14px;
 	text-transform: uppercase;
 	color: #FF001B;
-	margin-left: 15px;		
+	margin-left: 0;	
 }
 h1.category-title a {
 	color: #FF001B;
@@ -1387,22 +1390,17 @@ img#wpstats {
 #flexslider {
 	width: 100%;
 	position: relative;
-	margin: 10px 0 0 -0px;
+	margin: 10px 0 0 0;
 	overflow: hidden;
 }
 .jcarousel-skin-tango .jcarousel-container {
-  /*  -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-   border-radius: 10px;
-    background: #F0F6F9;
-    border: 1px solid #346F97;*/
-	padding-left: 37px;
-	padding-right: 37px;
-	width: 90%;
+	padding-left: 30px;
+	padding-right: 30px;
+	width: 100%;
 }
 .nav-controls {display: none;}
 .jcarousel-skin-tango {
-	width: 190px;	
+	width: 100%;
 }
 .jcarousel-skin-tango .jcarousel-direction-rtl {
 	direction: rtl;
@@ -1421,8 +1419,11 @@ img#wpstats {
 }
 
 .jcarousel-skin-tango .jcarousel-clip-horizontal {
-    width:  150px;
+    width:  100%;
     height: 210px;
+    @media screen and (min-width: $tabwidth) {
+    	width:  150px;
+    }
 }
 
 .jcarousel-skin-tango .jcarousel-clip-vertical {
@@ -1431,15 +1432,26 @@ img#wpstats {
 }
 
 .jcarousel-skin-tango .jcarousel-item {
-   width: 130px;
-	height: 210px;
+	box-sizing: border-box;
+    width: 150px;
+	height: 230px;
+	@media screen and (min-width: $tabwidth) {
+		width: 148px;
+	}
+	.cat-caro {
+		width: 100%;
+	}
 }
 .jcarousel-skin-tango .jcarousel-item a {
-   width: 130px;
-	height: 210px;
+   width: 100%;
+	height: 100%;
 	text-decoration: none;
 	color: #999;
 	display: block;
+	img {
+		width: 100%;
+		height: auto;
+	}
 }
 .jcarousel-skin-tango .jcarousel-item a:hover {
 	color: #FF001B;
@@ -1447,7 +1459,7 @@ img#wpstats {
 
 .jcarousel-skin-tango .jcarousel-item-horizontal {
 	margin-left: 0;
-    margin-right: 22px;
+    margin-right: 20px;
 }
 
 .jcarousel-skin-tango .jcarousel-direction-rtl .jcarousel-item-horizontal {
@@ -1483,15 +1495,6 @@ img#wpstats {
     background-image: url(prev-horizontal.png);
 }
 
-/*.jcarousel-skin-tango .jcarousel-next-horizontal:hover,
-.jcarousel-skin-tango .jcarousel-next-horizontal:focus {
-    background-position: -32px 0;
-}
-
-.jcarousel-skin-tango .jcarousel-next-horizontal:active {
-    background-position: -64px 0;
-}*/
-
 .jcarousel-skin-tango .jcarousel-next-disabled-horizontal,
 .jcarousel-skin-tango .jcarousel-next-disabled-horizontal:hover,
 .jcarousel-skin-tango .jcarousel-next-disabled-horizontal:focus,
@@ -1503,13 +1506,57 @@ img#wpstats {
 .jcarousel-skin-tango .jcarousel-prev {
     position: absolute;
     top: 30px;
-    left: -0px;
+    left: 0;
     width:40px;
     height: 80px;
     cursor: pointer;
-    background-image: url(images/next-prev.png);
-	background-repeat:no-repeat;
-	background-position: 0 0;
+    background-image: none!important;
+}
+.jcarousel-skin-tango .jcarousel-prev,
+.jcarousel-skin-tango .jcarousel-next {
+	background-size: contain;
+	@media screen and (min-width: $tabwidth) {
+		width:40px;
+    	height: 80px;
+	}
+	&:before {
+		content:"";
+		display: block;
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: 25px;
+		left: 9px;
+		@media screen and (min-width: $tabwidth) {
+			top: 10px;
+			left: 8px;
+		}
+	}
+}
+.jcarousel-skin-tango .jcarousel-prev {
+	&:before {
+		border-right: 14px solid $color-red;
+		border-top: 20px solid transparent;
+		border-bottom: 20px solid transparent;
+		@media screen and (min-width: $tabwidth) {
+			border-right: 20px solid $color-red;
+			border-top: 30px solid transparent;
+			border-bottom: 30px solid transparent;
+		}
+	}
+}
+.jcarousel-skin-tango .jcarousel-next {
+	&:before {
+	   	border-left: 14px solid $color-red;
+		border-top: 20px solid transparent;
+		border-bottom: 20px solid transparent;
+		@media screen and (min-width: $tabwidth) {
+			border-left: 20px solid $color-red;
+			border-top: 30px solid transparent;
+			border-bottom: 30px solid transparent;
+			left: 3px;
+		}
+	}
 }
 
 .jcarousel-skin-tango .jcarousel-direction-rtl .jcarousel-prev-horizontal {
@@ -1540,13 +1587,10 @@ img#wpstats {
 .jcarousel-skin-tango .jcarousel-next {
     position: absolute;
     top: 30px;
-    right: -0px;
+    right: -8px;
     width: 40px;
     height: 80px;
     cursor: pointer;
-   background-image: url(images/next-prev.png);
-   background-repeat:no-repeat;
-	background-position: -40px -0px;
 }
 
 .jcarousel-skin-tango .jcarousel-next-vertical:hover,
@@ -1780,28 +1824,10 @@ img#wpstats {
 	/*
 	= Portfolio Structure
 	-------------------------------------------------------------- */
-	// .viewall-div {
-	// 	width: 130px;
-	// 	height: 230px;
-	// }
-	// .thumbnail, .thumbnail img {
-	// 	width: 130px;
-	// 	height: 130px;	
-	// }
-	// .port-post-div {
-	// 	width: 180px;
-	// 	height: 250px;
-	// 	float: left;
-	// 	margin: 30px 30px 0 0;
-	// }
-	// .port-post-div a {
-	// 	width: 180px;
-	// }
-
 	.portfolio-blocks-wrapper {
 		.row {
-			margin-left: -15px;
-			margin-right: -15px;
+			margin-left: -10px;
+			margin-right: -10px;
 			@media screen and (min-width: $tabwidth) {
 				@include flexbox();
 				@include flexbox-wrap(wrap);
@@ -1825,8 +1851,8 @@ img#wpstats {
 			}
 
 			.inside {
-				padding-left: 15px;
-				padding-right: 15px;
+				padding-left: 10px;
+				padding-right: 10px;
 			}
 
 			a {
@@ -1970,28 +1996,30 @@ img#wpstats {
 					CAROUSEL
 	======================================================================= */
 	#flexslider {
-		width: 780px;
+		width: 100%;
 		position: relative;
-		margin: 10px 0 0 -7px;
+		margin: 10px auto;
 		overflow: hidden;
+		left: 0;
+		box-sizing: border-box;
+		@media screen and (min-width: $deskwidth) {
+			width: 106%;
+			left: -36px;
+		}
+
 	}
 	.jcarousel-skin-tango .jcarousel-container {
 		padding-left: 37px;
 		padding-right: 37px;
-		width: 710px;
-	}
-	.jcarousel-skin-tango {
-		width: 780px;	
 	}
 	.jcarousel-skin-tango .jcarousel-direction-rtl {
 		direction: rtl;
 	}
 
-
 	.jcarousel-skin-tango .jcarousel-container-vertical {
-	width: 75px;
-	height: 245px;
-	padding: 40px 20px;
+		width: 75px;
+		height: 245px;
+		padding: 40px 20px;
 	}
 
 	.jcarousel-skin-tango .jcarousel-clip {
@@ -2079,23 +2107,22 @@ img#wpstats {
 		margin: 0 0 20px 0;	
 	}
 	/*====================================
-
-			Portfolio 
+		Portfolio 
 	======================================*/
 	.subnav li a {
-		font-size: 13px;
+		font-size: 12px;
+		padding: .85em .63em .7em;
+		-webkit-font-smoothing: antialiased;
 	}
-	.subnav li.firstlist a {
-		padding: 10px 10px 10px 15px;
-	}
-	.subnav li.notfirst a {
-		padding: 10px;
+	body.is_safari .subnav li a {
+		font-size: 11px;
+		padding: .85em .46em .7em;
 	}
 	#proj-page-left {
 		width: 30%;
 	}
 	.carouseltitle {
-		margin: 0 0 0 15px;	
+		margin: 0 0;	
 	}
 	#proj-page-left {
 		width: 35%;
@@ -2114,28 +2141,21 @@ img#wpstats {
 						CAROUSEL
 	======================================================================= */
 	#flexslider {
-		width: 1124px;
 		position: relative;
-		margin: 10px 0 0 -37px;
+		margin: 10px auto;
 		overflow: hidden;
 	}
 	.jcarousel-skin-tango .jcarousel-container {
-	  /*  -moz-border-radius: 10px;
-	    -webkit-border-radius: 10px;
-	   border-radius: 10px;
-	    background: #F0F6F9;
-	    border: 1px solid #346F97;*/
-		padding-left: 37px;
-		padding-right: 37px;
-		width: 1046px;
-	}
-	.jcarousel-skin-tango {
-		width: 1117px;	
+		padding-left: 40px;
+		padding-right: 40px;
+		@media screen and (min-width: $tabwidth) {
+			padding-left: 38px;
+			padding-right: 38px;
+		}
 	}
 	.jcarousel-skin-tango .jcarousel-direction-rtl {
 		direction: rtl;
 	}
-
 
 	.jcarousel-skin-tango .jcarousel-container-vertical {
 	    width: 75px;
@@ -2145,7 +2165,7 @@ img#wpstats {
 
 	.jcarousel-skin-tango .jcarousel-clip {
 	    overflow: hidden;
-		width: 1045px;
+		width: 100%;
 	}
 	#flexcarousel.flexslider li {
 		width: 16.66666%;
@@ -2470,11 +2490,11 @@ img#wpstats {
 		margin-bottom: 20px;
 		width: 100%;
 		@media screen and (min-width: $tabwidth) {
-			width: 50%;
+			width: 49.9%;
 			float: left;
 		}
 		@media screen and (min-width: $midwidth) {
-			width: 20%;
+			width: 24.9%;
 		}
 	}
 	.portcat a,
@@ -2496,7 +2516,7 @@ img#wpstats {
 			width: 100%;
 			height: 100%;
 			position: absolute;
-			margin-bottom: -20%;
+			margin-bottom: -10%;
 			bottom: 0;
 			left: 0;
 			opacity: 0.7;
@@ -2529,6 +2549,14 @@ img#wpstats {
 		}
 		@media screen and (min-width: $deskwidth) {
 			height: 200px;
+		}
+	}
+	.sitelogo {
+		.imagebg {
+			background-position: bottom right;
+		}
+		a:after {
+			display: none;
 		}
 	}
 	.portcat a:hover {
@@ -2593,7 +2621,7 @@ body.home .page-container {
 	.column {
 		box-sizing: border-box;
 		@media screen and (min-width: $tabwidth) {
-			width: 50%;
+			width: 49.9%;
 			float: left;
 		}
 		p {
@@ -2748,6 +2776,15 @@ body.home .page-container {
 		}
 	}
 }
+
+.subnav ul.cat-menu {
+	li {
+		display: inline-block;
+		float: left;
+		margin: 0 0;
+	}
+}
+
 .site-footer {
 	a {
 		color: #FFF;
@@ -2772,7 +2809,7 @@ body.home .page-container {
 	.flexcol {
 		text-align: center;
 		@media screen and (min-width: $tabwidth) {
-			width: 50%;
+			width: 49.9%;
 			float: left;
 			text-align: left;
 		}

@@ -15,6 +15,12 @@ div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 }
+.pagewrap {
+	overflow: hidden;
+	@media screen and (min-width: $tabwidth) {
+		overflow: auto;
+	}
+}
 .oxygen {font-family: 'Oxygen', sans-serif;}
 .raleway {font-family: 'Raleway', sans-serif;}
 /* Clearing floats */
@@ -178,14 +184,14 @@ footer[role="contentinfo"] a:hover {
 		width: 100%;
 		float: left;
 		@media screen and (min-width: $tabwidth) {
-			width: 40%;
+			width: 39.9%;
 		}
 	}
 	.right-column {
 		width: 100%;
 		float: left;
 		@media screen and (min-width: $tabwidth) {
-			width: 60%;
+			width: 59.9%;
 		}
 	}
 }
