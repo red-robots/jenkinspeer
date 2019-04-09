@@ -2234,7 +2234,7 @@ body.is_safari .subnav li a{font-size:11px;padding:.85em .46em .7em}
 #proj-page-left{width:35%}
 #single-proj-right.rightdiv{width:53%;float:right;padding-right:20px}
 #flexslider2.flexslider,#flexslider2.flexslider li{height:330px}
-body.tax-portcats .subnav li a{padding:.85em 1em .7em}
+body.tax-portcats .subnav li a.active{background:transparent;color:#fdcbcb}
 #flexslider{position:relative;margin:10px auto;overflow:hidden}
 .jcarousel-skin-tango .jcarousel-container{padding-left:40px;padding-right:40px}
 }@media screen and (min-width:900px) and (min-width:600px){.jcarousel-skin-tango .jcarousel-container{padding-left:38px;padding-right:38px}

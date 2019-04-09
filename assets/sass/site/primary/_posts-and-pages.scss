@@ -2159,8 +2159,9 @@ img#wpstats {
 	}
 
 	body.tax-portcats {
-		.subnav li a {
-			padding: .85em 1em .7em;
+		.subnav li a.active {
+			background: transparent;
+			color: #fdcbcb;
 		}
 	}
 
