@@ -6,15 +6,12 @@ $queried_object = get_queried_object();
 $taxonomy = $queried_object->taxonomy;
 // Taxonomy ID
 $term_id = $queried_object->term_id;
-
+$view_all_link = '';
 ?>
 
 
 <h1 class="category-title">
-	<?php echo get_queried_object()->name; ?> | 
-    <a class="viewall" href="#viewall">
-    	View All
-    </a>
+	<?php echo get_queried_object()->name; ?>
 </h1>
 
 <?php
@@ -24,7 +21,7 @@ $termchildren = get_term_children( $term_id, $taxonomy_name );
 ?>
 <?php if(!empty($termchildren)) : ?>
 <nav class="subnav" id="cat-navigation" role="navigation">
-<h3 class="menu-toggle"><?php _e( 'Filter by Project Type', 'twentytwelve' ); ?></h3>
+<h3 class="menu-toggle"><?php _e( 'Filter by Project Type', 'twentytwelve' ); ?> <span class="arrow"></span></h3>
 <ul class="cat-menu">
 
 <?php 
@@ -32,6 +29,7 @@ $termchildren = get_term_children( $term_id, $taxonomy_name );
     $taxonomyName = get_query_var( 'taxonomy' );
     $current_term = get_term_by( 'slug', $term_slug, $taxonomyName );
     $termchildren = get_term_children( $current_term->term_id, $taxonomyName );
+
     foreach ($termchildren as $child) {
     $term = get_term_by( 'id', $child, $taxonomyName );
         $wpq = array (
@@ -46,23 +44,16 @@ $termchildren = get_term_children( $term_id, $taxonomy_name );
         ?>
 
         <?php
+         $counter = 1;
         if ($query->have_posts() ) : while ($query->have_posts() ) : $query->the_post(); ?>
         <?php 
-				// counter to pad first list item
-				++$counter;
-				if($counter == 1) { // change number to pick which one is going to be different
-				$listclass = 'firstlist';
-				//$counter = 0;
-				} else { $listclass = 'notfirst'; }
-				?>
-        
-        
+			// counter to pad first list item
+            $listclass = ($counter==1) ? 'firstlist':'notfirst'; ?>    
             <li class="<?php echo $listclass; ?>">
                 <a href="<?php the_permalink();?>?cat=<?php echo $term->term_id; ?>"><?php echo $term->name ?></a>
             </li>
-        <?php endwhile; endif; wp_reset_query(); ?>
+        <?php $counter++; endwhile; endif; wp_reset_query(); ?>
         <?php
-        //echo "<br />";   
     }
 ?>
 

@@ -5,7 +5,8 @@ function get_post_siblings( $limit = 1, $date = '' ) {
   // Custom Category
   $taxonomy = 'portcats';
   // Get term id value from incoming URL
-  $term_id = $_REQUEST['cat'];
+  $term_id =( isset($_REQUEST['cat']) && $_REQUEST['cat'] && is_numeric($_REQUEST['cat']) ) ? $_REQUEST['cat'] : 0;
+
   //echo $term_id;
   $terms = get_the_terms( $post->ID, $taxonomy );
   // echo $terms->term_id;
@@ -87,34 +88,34 @@ function get_post_siblings( $limit = 1, $date = '' ) {
 ?>
  
 <div class="proj-pagi-prev">
-      <?php
-	   $siblings = get_post_siblings( 1 );
-    $next = $siblings['next'];
-   
-    foreach( $next as $n )
-        $term_id = $_REQUEST['cat'];
-        $permalink = get_permalink( $n->ID );
-        $link = $permalink . "?cat=" . $term_id;
-		if($n != "") {
-             echo "<a href='" . $link . "'><span class='plain-text'>Previous</span> PROJECT</a>";
-		}
-    ?>
+  <?php
+  $siblings = get_post_siblings( 1 );
+  $next = $siblings['next'];
+    
+  if( $next ) {
+    foreach( $next as $n ) {
+      $term_id = $_REQUEST['cat'];
+      $permalink = get_permalink( $n->ID );
+      $link = $permalink . "?cat=" . $term_id;
+  		if($n != "") {
+               echo "<a href='" . $link . "'><span class='plain-text'>Previous</span> PROJECT</a>";
+  		}
+    }
+  } ?>
 </div><!-- proj pagi prev -->
  
- 
 <div class="proj-pagi-next">
-   <?php
-   
-   
-    $prev = $siblings['prev'];
-   
-    foreach( $prev as $p )
-        $term_id = $_REQUEST['cat'];
-        $permalink = get_permalink( $p->ID );
-        $link = $permalink . "?cat=" . $term_id;
-		if($p != "") {
-            echo "<a href='" . $link . "'><span class='plain-text'>Next</span> PROJECT</a>";
-		}
-    ?>
-       
+  <?php
+  $prev = $siblings['prev'];
+  if( $prev ) {
+    foreach( $prev as $p ) {
+      $term_id = $_REQUEST['cat'];
+      $permalink = get_permalink( $p->ID );
+      $link = $permalink . "?cat=" . $term_id;
+  		if($p != "") {
+              echo "<a href='" . $link . "'><span class='plain-text'>Next</span> PROJECT</a>";
+  		}
+    }
+  } ?>
 </div><!-- proj-pagi-next -->
+

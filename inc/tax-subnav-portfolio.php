@@ -1,5 +1,5 @@
 <nav class="subnav" id="cat-navigation" role="navigation">
-  <h3 class="menu-toggle"><?php _e( 'Filter by Project Type', 'twentytwelve' ); ?></h3>
+  <h3 class="menu-toggle"><?php _e( 'Filter by Project Type', 'twentytwelve' ); ?> <span class="arrow"></span></h3>
 	<ul class="cat-menu">
     <?php  
     /* List all terms associated with a Custom Taxonomy  */

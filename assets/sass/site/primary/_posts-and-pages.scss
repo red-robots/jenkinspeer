@@ -210,7 +210,18 @@ section[role="banner"] {
 	display: none;
 }
 .subnav ul.cat-menu.toggled-on {
-	display: inline-block;
+	display: block;
+	li {
+		display: block;
+		width: 100%;
+		a {
+			padding: 5px 10px 3px;
+		}
+	}
+	@media screen and (min-width: $tabwidth) {
+		display: inline-block;
+		width: auto;
+	}
 }
 .subnav ul {
 	margin: 0px;
@@ -818,7 +829,17 @@ h1.category-title {
 	font-size: 14px;
 	text-transform: uppercase;
 	color: #FF001B;
-	margin-left: 0;	
+	margin-left: 0;
+	margin-bottom: 0;
+	text-align: center;
+	border-bottom: 1px solid $color-red;
+	padding-bottom: 10px;
+	@media screen and (min-width: $tabwidth) {
+		text-align: left;
+		border-bottom: none;
+		padding-bottom: 0;
+		margin-bottom: 8px;
+	}	
 }
 h1.category-title a {
 	color: #FF001B;
@@ -2137,6 +2158,12 @@ img#wpstats {
 		height: 330px;
 	}
 
+	body.tax-portcats {
+		.subnav li a {
+			padding: .85em 1em .7em;
+		}
+	}
+
 	/* =======================================================================
 						CAROUSEL
 	======================================================================= */
@@ -2782,6 +2809,110 @@ body.home .page-container {
 		display: inline-block;
 		float: left;
 		margin: 0 0;
+	}
+}
+
+/*============================
+	Project list By Category 
+==============================*/
+.three-column-wrapper {
+	padding-top: 10px;
+	padding-bottom: 30px;
+	@media screen and (min-width: $tabwidth) {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	.flexrow {
+		margin-left: -15px;
+		margin-right: -15px;
+		@media screen and (min-width: $tabwidth) {
+			@include flexbox();
+			@include flexbox-wrap(wrap);
+			@include flexbox-direction(row);
+			@include flexbox-justify(flex-start);
+		}
+	}
+	.flexcol {
+		position: relative;
+		margin-bottom: 30px;
+		@media screen and (min-width: $tabwidth) {
+			width: 49.9%;
+			float: left;
+		}
+
+		@media screen and (min-width: $midwidth) {
+			width: 33.3%;
+		}
+	}
+	.inside {
+		padding-left: 15px;
+		padding-right: 15px;
+		box-sizing: border-box;
+	}
+	.boxlink {
+		display: block;
+		text-decoration: none;
+		box-sizing: border-box;
+		color: $color__text-main;
+		width: 100%;
+		height: 100%;
+		float: left;
+		background: $color-subtle-grey;
+		border: 1px solid $color-subtle-grey;
+		@include transition(all ease-out .3s);
+		span {
+			display: block;
+		}
+		h2,.client {
+			color: $color__text-main;
+			font-size: 15px;
+			font-weight: 600;
+			line-height: 1.4;
+			@include transition(all ease-out .3s);
+		}
+		h2 {
+			margin: 0 0;
+		}
+		.project-info {
+			padding: 20px;
+		}
+		&:hover {
+			background: $color-red;
+			border-color: $color-red;
+			color: #FFF;
+			h2,.client {
+				color: #FFF;
+			}
+		}
+	}
+
+	.thumbnail, 
+	.thumbnail img,
+	.project-info {
+		width: 100%;
+		height: auto;
+		float: left;
+		margin: 0 0;
+	}
+}
+
+.subnav .menu-toggle {
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 16px;
+	margin: 5px 0;
+	position: relative;
+	span.arrow {
+		display: block;
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: 9px;
+    	right: 92px;
+		border-top: 6px solid $color__text-main;
+   		border-left: 5px solid transparent; 
+   		border-right: 5px solid transparent; 
+   		@include transition(all ease-out .3s);
 	}
 }
 
