@@ -2858,17 +2858,19 @@ body.home .page-container {
 	.inside {
 		padding-left: 15px;
 		padding-right: 15px;
+		position: relative;
 		box-sizing: border-box;
+		height: 100%;
 	}
 	.boxlink {
 		display: block;
 		text-decoration: none;
 		box-sizing: border-box;
+		background: $color-subtle-grey;
 		color: $color__text-main;
 		width: 100%;
 		height: 100%;
 		float: left;
-		background: $color-subtle-grey;
 		border: 1px solid $color-subtle-grey;
 		@include transition(all ease-out .3s);
 		span {
@@ -2904,6 +2906,45 @@ body.home .page-container {
 		height: auto;
 		float: left;
 		margin: 0 0;
+	}
+
+	.thumbnail {
+		display: block;
+		background-size:cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		width: 100%;
+		height: auto;
+		@media screen and (min-width: $tabwidth) {
+			height: 220px;
+		}
+		@media screen and (min-width: $midwidth) {
+			height: 230px;
+		}
+		@media screen and (min-width: $deskwidth) {
+			height: 260px;
+		}
+		img {
+			display: block;
+			@media screen and (min-width: $tabwidth) {
+				display: none;
+			}
+		}
+	}
+	.editpost {
+		display: inline-block;
+		position: absolute;
+		bottom: 0;
+		right: 15px;
+		text-transform: uppercase;
+		text-decoration: none;
+		z-index: 10;
+		font-size: 12px;
+		font-weight: 600;
+		line-height: 1.2;
+		color: #FFF;
+		padding: 5px 8px 3px;
+	    background: #8b8b8b;
 	}
 }
 
