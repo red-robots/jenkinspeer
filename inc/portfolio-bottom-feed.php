@@ -16,7 +16,7 @@ if( $wp_query->have_posts() ) { ?>
         $term = get_the_terms($post_id,$taxonomy);
         $term_id = ($term) ? $term->term_id : '';
         $pagelink = get_permalink();
-        $imgSrc = wp_get_attachment_image_src($post_thumbnail_id,'large');
+        $imgSrc = wp_get_attachment_image_src($post_thumbnail_id,'thumbnail_large');
         $img_url = ($imgSrc) ? $imgSrc[0] : get_bloginfo('template_url') . '/images/default-thumb.png';
         $post_edit_link = get_edit_post_link($post_id);
         ?>
