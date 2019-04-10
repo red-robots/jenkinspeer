@@ -25,7 +25,7 @@ if( $wp_query->have_posts() ) { ?>
                 <a class="boxlink" href="<?php echo $pagelink; ?>">
                     <span class="thumbnail" style="background-image:url('<?php echo $img_url?>')">
                         <?php  if ( has_post_thumbnail() ) { ?>
-                            <?php the_post_thumbnail('large'); ?>
+                            <?php the_post_thumbnail('thumbnail_large'); ?>
                         <?php } else { ?>
                             <img src="<?php bloginfo('template_url'); ?>/images/default-thumb.png" width="130px" height="130px"/>
                         <?php } ?>
