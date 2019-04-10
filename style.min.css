@@ -1809,11 +1809,11 @@ div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong{overflow-wrap:normal;word-wrap:normal;-
 .nav-next,.next-image{float:right;text-align:right;width:50%}
 .nav-single+.comments-area,#comment-nav-above{margin:48px 0}
 .logo,h1.logo{display:block;width:250px;margin:0 auto}
-@media screen and (min-width:600px){.logo,h1.logo{width:250px;margin:0}
+@media screen and (min-width:600px){.logo,h1.logo{width:230px;margin:0}
 }@media screen and (min-width:900px){.logo,h1.logo{width:380px}
 }@media screen and (min-width:1200px){.logo,h1.logo{width:400px}
-}.logo a,h1.logo a{margin:10px 0}
-@media screen and (min-width:600px){.logo a,h1.logo a{margin:0}
+}.logo a,h1.logo a{margin:25px 0 20px}
+@media screen and (min-width:600px){.logo a,h1.logo a{margin:23px 0}
 }.logo a,.logo img,h1.logo a,h1.logo img{display:block;width:100%;float:left}
 .siteby{font-family:'Roboto Condensed',sans-serif;font-size:12px}
 #footer{width:100%;background-color:#636060;font-size:16px;color:#FFF}
@@ -1894,6 +1894,9 @@ h1.main-proj-title{font-size:22px;font-weight:normal;line-height:1.4;margin:0 0 
 #page-left-single-proj{width:440px;float:left}
 #single-proj-right{width:100%;float:right;position:relative}
 #project-details{width:396px;min-height:365px;padding:10px 20px 20px 20px;font-size:14px;color:#000}
+.proj-pagi-prev,.proj-pagi-next{width:49%}
+.proj-pagi-prev{float:left}
+.proj-pagi-next{float:right}
 .proj-pagi-next a{width:auto;float:right;margin-top:10px;margin-bottom:20px;text-decoration:none;color:#fe0000}
 .proj-pagi-prev a{width:auto;float:left;margin-top:10px;margin-bottom:20px;text-decoration:none;color:#fe0000}
 span.plain-text{color:#666}

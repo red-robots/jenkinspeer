@@ -6,7 +6,8 @@
  /**
  * Bring in some Custom Functions
  */
-require( get_template_directory() . '/inc/theme-functions.php' );
+require( get_template_directory() . '/functions/theme-functions.php' );
+require( get_template_directory() . '/functions/extras.php' );
 //require( get_template_directory() . '/inc/theme-functions-hier-tags.php' );
 
  
@@ -363,5 +364,5 @@ function twentytwelve_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
 
-require( get_template_directory() . '/functions/extras.php' );
+
 

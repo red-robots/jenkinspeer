@@ -456,11 +456,20 @@ function group_by_post_type( $groupby )
 ---------------------------------------*/
 function my_login_logo() { ?>
 <style type="text/css">
+  body.login div#login h1 {
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #FFF;
+    text-align: center;
+  }
   body.login div#login h1 a {
+    display: inline-block;
   	background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png);
-  	background-size: 280px 55px;
+  	background-size: contain;
+    background-position: center;
   	width: 280px;
   	height: 55px;
+    margin: 0 0;
   }
 </style>
 <?php }
@@ -595,8 +604,5 @@ function custom_taxonomies_terms_links()
 
     }
 
-
-
     return implode('', $out );
-
 }

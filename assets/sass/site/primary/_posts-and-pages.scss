@@ -345,6 +345,16 @@ h1.main-proj-title {
 	font-size:14px;
 	color: #000;
 }
+.proj-pagi-prev,
+.proj-pagi-next {
+	width: 49%;
+}
+.proj-pagi-prev {
+	float: left;
+}
+.proj-pagi-next {
+	float: right;
+}
 .proj-pagi-next a {
 	width:auto;
 	float: right;
