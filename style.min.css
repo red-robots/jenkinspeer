@@ -1871,7 +1871,7 @@ section[role="banner"]{margin-bottom:48px}
 .subnav ul.cat-menu,.subnav div.cat-menu>ul{display:none}
 .subnav ul.cat-menu.toggled-on{display:block}
 .subnav ul.cat-menu.toggled-on li{display:block;width:100%}
-.subnav ul.cat-menu.toggled-on li a{padding:5px 10px 3px}
+.subnav ul.cat-menu.toggled-on li a{padding:8px 10px 4px}
 @media screen and (min-width:600px){.subnav ul.cat-menu.toggled-on{display:inline-block;width:auto}
 }.subnav ul{margin:0;padding:0}
 .subnav li{text-align:center;width:auto;display:block}
@@ -2230,7 +2230,7 @@ h2.persontitle{margin-top:20px;text-transform:capitalize}
 .person-details{width:350px}
 .contact-info{width:350px}
 .google-map{width:500px;height:400px;margin:0 0 20px 0}
-.subnav li a{font-size:12px;padding:.85em .63em .7em;-webkit-font-smoothing:antialiased}
+.subnav li a{font-size:12px;padding:.85em .85em .7em;-webkit-font-smoothing:antialiased}
 body.is_safari .subnav li a{font-size:11px;padding:.85em .46em .7em}
 #proj-page-left{width:30%}
 .carouseltitle{margin:0}

@@ -7208,7 +7208,7 @@ section[role="banner"] {
     display: block;
     width: 100%; }
     .subnav ul.cat-menu.toggled-on li a {
-      padding: 5px 10px 3px; }
+      padding: 8px 10px 4px; }
   @media screen and (min-width: 600px) {
     .subnav ul.cat-menu.toggled-on {
       display: inline-block;
@@ -8987,7 +8987,7 @@ img#wpstats {
 	======================================*/
   .subnav li a {
     font-size: 12px;
-    padding: .85em .63em .7em;
+    padding: .85em .85em .7em;
     -webkit-font-smoothing: antialiased; }
   body.is_safari .subnav li a {
     font-size: 11px;
