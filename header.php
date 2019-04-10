@@ -79,7 +79,7 @@ var template_url = "<?php bloginfo('template_url'); ?>";
 	</div><!-- #header -->
 
 	<?php if (is_home() || is_front_page()) { ?>
-		<?php get_template_part('inc/latest-projects'); ?>
+		<?php get_template_part('inc/featured-projects'); ?>
 	<?php } ?>
 
 <div class="page-container wrapper">
