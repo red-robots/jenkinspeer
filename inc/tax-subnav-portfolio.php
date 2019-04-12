@@ -4,10 +4,10 @@
     <?php  
     /* List all terms associated with a Custom Taxonomy  */
     $getArgs = array(
-    	'parent'       => 0,
-    	'order' => 'DESC',
-    	'orderby' => 'count',
-        'hide_empty'    => false,
+      'parent'       => 0,
+      'order' => 'ASC',
+      'orderby' => 'name',
+      'hide_empty'    => false,
     );
     $terms = get_terms('portcats', $getArgs);
     if ( !empty( $terms ) && !is_wp_error( $terms ) ){
