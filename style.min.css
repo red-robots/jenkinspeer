@@ -2451,8 +2451,8 @@ body.home .page-container.wrapper{max-width:100%;padding-left:0;padding-right:0}
 .swiper-container .slick-arrow.slick-next:before,.swiper-container .slick-arrow.slick-next:after{right:5px}
 .swiper-container .slick-arrow.slick-next:before{-webkit-transform:translateY(0) rotate(45deg);-ms-transform:translateY(0) rotate(45deg);transform:translateY(0) rotate(45deg)}
 .swiper-container .slick-arrow.slick-next:after{-webkit-transform:translateY(23px) rotate(-45deg);-ms-transform:translateY(23px) rotate(-45deg);transform:translateY(23px) rotate(-45deg)}
-.project-info-wrapper{padding-top:50px;padding-bottom:40px}
-.related-projects-wrap{margin-bottom:50px}
+.project-info-wrapper{padding-bottom:40px}
+.related-projects-wrap{padding-top:30px;padding-bottom:50px}
 .related-projects-wrap .section-title{text-transform:capitalize;color:#666;font-family:"Times New Roman",TimesNewRoman,Times,Georgia,serif;font-size:25px;font-weight:500;line-height:1.3;margin:0}
 .editpostlink{display:inline-block;text-decoration:none;color:#ff001b;border:1px dotted #ff001b;padding:4px 13px 2px;margin-bottom:15px;text-transform:uppercase;font-size:13px;font-weight:bold}
 .site-footer a{color:#FFF;text-decoration:none;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
