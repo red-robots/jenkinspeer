@@ -47,4 +47,15 @@ jQuery(document).ready(function ($) {
 	    }
 	});
 
+	/* Slick Carousel */
+	$('.swipe-projects').slick({
+	  dots: true,
+	  infinite: true,
+	  speed: 300,
+	  slidesToShow: 1,
+	  centerMode: true,
+	  variableWidth: true
+	});
+
+
 }); 

@@ -14,7 +14,7 @@ if( $wp_query->have_posts() ) { ?>
         $post_thumbnail_id = get_post_thumbnail_id( $post_id );
         $taxonomy = 'portcats';
         $term = get_the_terms($post_id,$taxonomy);
-        $term_id = ($term) ? $term->term_id : '';
+        $term_id = ( isset($term->term_id) && $term->term_id ) ?  $term->term_id: 0;
         $pagelink = get_permalink();
         $imgSrc = wp_get_attachment_image_src($post_thumbnail_id,'thumbnail_large');
         $img_url = ($imgSrc) ? $imgSrc[0] : get_bloginfo('template_url') . '/images/default-thumb.png';
