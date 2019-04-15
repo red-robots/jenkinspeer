@@ -18,8 +18,8 @@ if($terms) { ?>
 					'post_type' => $post_type,
 					'post__not_in' => array($post_id),
 					'posts_per_page' => 4,
-					'orderby'   => 'menu_order',
-	        		'order'     => 'ASC',
+					'orderby'   => 'ID',
+	        		'order'     => 'DESC',
 					'tax_query' => array(
 							array(
 							  'taxonomy' => $taxonomy,
