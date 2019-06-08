@@ -9,7 +9,7 @@ $args = array(
 $news = new WP_Query($args);
 if ( $news->have_posts() ) {  ?>
 <section class="latest-news-list section clear">
-	<div class="wrapper">
+	<div class="full-width clear">
 		<h2 class="section-title text-center">Latest News</h2>
 		<div class="flexrow clear">
 		<?php while ( $news->have_posts() ) : $news->the_post(); 

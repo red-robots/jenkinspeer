@@ -115,6 +115,13 @@ body {
 		float: left;
 	}
 }
+body.subpage {
+	.logo , h1.logo {
+		@media screen and (min-width: $deskwidth) {
+			width: 320px;
+		}
+	}
+}
 
 /* Footer  */
 .siteby {

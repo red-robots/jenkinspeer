@@ -1700,7 +1700,7 @@ img#wpstats {
 		width: 65.104166667%;
 	}
 	.left-cont-pad {
-		padding: 0 0 0 15px;	
+		padding: 0 0;	
 	}
 
 	body.template-front-page .site-content,
@@ -1711,7 +1711,7 @@ img#wpstats {
 	.widget-area {
 		float: right;
 		width: 26.041666667%;
-		margin: 60px 0 0 0 ;
+		margin: 45px 0 0 0 ;
 	}
 	.widget-archives {
 		float: left;
@@ -2365,21 +2365,19 @@ img#wpstats {
 	overflow:hidden;
 	.wrapper {
 		position: relative;
+		height: 100%;
 	}
 	width: 100%;
-	height: 300px;
-	@media screen and (min-width: $tabwidth) {
-		height: 400px;
-	}
-	@media screen and (min-width: $midwidth) {
-		height: 500px;
-	}
-	@media screen and (min-width: $deskwidth) {
-		height: 600px;
-	}
-	.image-slider {
-		position: relative;
-	}
+	// height: 300px;
+	// @media screen and (min-width: $tabwidth) {
+	// 	height: 400px;
+	// }
+	// @media screen and (min-width: $midwidth) {
+	// 	height: 500px;
+	// }
+	// @media screen and (min-width: $deskwidth) {
+	// 	height: 600px;
+	// }
 	.fp-image-wrap {
 		background-size: cover;
 		background-color: #CCC;
@@ -2389,17 +2387,34 @@ img#wpstats {
 		height: 100%;
 		position: relative;
 	}
+	.fp-image {
+		width: 100%;
+		height: auto;
+		float: left;
+	}
 	.image-slider {
 		width: 100%;
 		height: 100%;
 		position: relative;
 		box-sizing: border-box;
+		background-color: #d8d8d8;
 		color: #FFF;
+		float: left;
+	}
+	.slide-group {
+		display: none!important;
+		&.flex-active-slide {
+			display: block!important;
+		}
 	}
 	.fp-caption {
+		max-width: 100%;
+		width: 100%;
 		height: 100%;
 		margin: 0 auto;
-		position: relative;
+		position: absolute;
+		top: 0;
+		left: 0;
 		z-index: 10;
 	}
 	.overlay {
@@ -3019,6 +3034,7 @@ body.single-portfolio .page-container {
 		border-right: 4px solid #FFF;
 		position: relative;
 		cursor: grab;
+		background-color: #e9e8e8;
 		@media screen and (min-width: $tabwidth) {
 			height: 100%;
 			overflow: hidden;
@@ -3052,6 +3068,15 @@ body.single-portfolio .page-container {
 				left: 0;
 				border: 1px solid $color-subtle-grey;
 			}
+		}
+		img, .imagediv {
+			opacity: 0.2;
+			@include transition(all ease-out .3s);
+		}
+	}
+	.slick-slide.slick-active {
+		img, .imagediv {
+			opacity: 1;
 		}
 	}
 	.slick-dots {
@@ -3210,4 +3235,7 @@ body.single-portfolio .page-container {
 	}
 }
 
-
+.full-width {
+	padding-left: 30px;
+	padding-right: 30px;
+}
