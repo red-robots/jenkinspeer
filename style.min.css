@@ -1857,7 +1857,7 @@ body{font-size:15px;line-height:1.5}
 }.logo a,h1.logo a{margin:25px 0 20px}
 @media screen and (min-width:600px){.logo a,h1.logo a{margin:23px 0}
 }.logo a,.logo img,h1.logo a,h1.logo img{display:block;width:100%;float:left}
-@media screen and (min-width:1200px){body.subpage .logo,body.subpage h1.logo{width:320px}
+@media screen and (min-width:1200px){body.subpage .logo,body.subpage h1.logo{width:310px}
 }.siteby{font-family:'Roboto Condensed',sans-serif;font-size:12px}
 #footer{width:100%;background-color:#636060;font-size:16px;color:#FFF}
 #footer-cont{margin:10px auto 0 auto;font-size:14px;color:#FFF;padding:20px}
