@@ -173,6 +173,15 @@ footer[role="contentinfo"] a:hover {
 	padding-left: 20px;
 	padding-right: 20px;
 }
+.fullwidth-grid,
+.fullwidth-grid.wrapper {
+	@media screen and (min-width: $midwidth) {
+		max-width: 100%;
+		width: 100%;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
 
 .header-wrapper {
 	position: relative;

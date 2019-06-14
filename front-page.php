@@ -1,7 +1,7 @@
 <?php 
 get_header(); ?>
 <div id="primary" class="full-content-area">
-	<div class="wrapper">
+	<div class="wrapper fullwidth-grid">
 		<?php get_template_part('inc/project-categories'); ?>
 	</div>
 	<?php while ( have_posts() ) : the_post(); 
