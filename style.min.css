@@ -2349,15 +2349,13 @@ footer.entry-meta,footer.entry-meta a{color:#444;font-size:10pt}
 .portfolio-categories-list .flexcol{margin-bottom:20px;width:100%}
 @media screen and (min-width:600px){.portfolio-categories-list .flexcol{width:49.9%;float:left}
 }@media screen and (min-width:900px){.portfolio-categories-list .flexcol{width:24.9%;margin-bottom:30px}
-}.portfolio-categories-list .portcat a,.portfolio-categories-list .portcat img{display:block;width:100%;height:auto;float:left;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
-.portfolio-categories-list .portcat a{text-decoration:none;color:#FFF;overflow:hidden;position:relative}
-.portfolio-categories-list .portcat a:after{content:"";display:block;width:100%;height:100%;position:absolute;margin-bottom:-10%;bottom:0;left:0;opacity:.7;background:-webkit-linear-gradient(top,rgba(33,33,33,0) 0,rgba(33,33,33,0) 2%,rgba(33,33,33,0.65) 100%);background:linear-gradient(to bottom,rgba(33,33,33,0) 0,rgba(33,33,33,0) 2%,rgba(33,33,33,0.65) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00212121',endColorstr='#a6212121',GradientType=0)}
-.portfolio-categories-list .portcat img{display:block}
-@media screen and (min-width:600px){.portfolio-categories-list .portcat img{display:none}
-}.portfolio-categories-list .imagebg{display:none;width:100%;background-size:cover;background-repeat:no-repeat;background-color:#ebebeb;background-position:center;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
-@media screen and (min-width:600px){.portfolio-categories-list .imagebg{display:block;height:220px}
-}@media screen and (min-width:900px){.portfolio-categories-list .imagebg{height:180px}
-}@media screen and (min-width:1200px){.portfolio-categories-list .imagebg{height:200px}
+}.portfolio-categories-list .portcat a{display:block;width:100%;height:100%;float:left;text-decoration:none;color:#FFF;overflow:hidden;position:relative;background-size:cover;background-repeat:no-repeat;background-position:center;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
+.portfolio-categories-list .portcat a:after{content:"";display:block;width:100%;height:100%;position:absolute;bottom:0;left:0;opacity:.7;background:-webkit-linear-gradient(top,rgba(33,33,33,0) 0,rgba(33,33,33,0) 2%,rgba(33,33,33,0.65) 100%);background:linear-gradient(to bottom,rgba(33,33,33,0) 0,rgba(33,33,33,0) 2%,rgba(33,33,33,0.65) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00212121',endColorstr='#a6212121',GradientType=0)}
+.portfolio-categories-list .portcat img{width:100%;height:auto}
+.portfolio-categories-list .portcat img.actual{display:none}
+.portfolio-categories-list .imagebg{display:block;width:100%;background-size:cover;background-repeat:no-repeat;background-color:#ebebeb;background-position:center;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
+.portfolio-categories-list .imagebg img{display:none}
+@media screen and (min-width:600px){.portfolio-categories-list .imagebg img{display:block}
 }.portfolio-categories-list .sitelogo .imagebg{background-position:bottom right}
 .portfolio-categories-list .sitelogo a:after{display:none}
 .portfolio-categories-list .portcat a:hover .imagebg,.portfolio-categories-list .portcat a:hover img{-webkit-transform:scale(1.2);-ms-transform:scale(1.2);transform:scale(1.2)}

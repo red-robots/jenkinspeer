@@ -18,7 +18,7 @@ if($categories) { ?>
 		}
 		$catLink = get_term_link($cat);
 		if($catImg) {
-			$catImgSrc = $catImg['sizes']['large'];
+			$catImgSrc = $catImg['sizes']['medium_large'];
 			$cat_alt = $catImg['title'];
 		} else {
 			$catImgSrc = get_bloginfo('template_url').'/images/noimage.gif';
@@ -27,9 +27,9 @@ if($categories) { ?>
 		?>
 		<div class="portcat flexcol">
 			<div class="inside clear">
-				<a href="<?php echo $catLink; ?>" style="background-image:url('<?php echo $catImgSrc;?>');">
-					<img class="transparent" src="<?php echo get_bloginfo('template_url') ?>/images/transparent.png" alt="" aria-hidden="true" />
-					<img class="actual" src="<?php echo $catImgSrc ?>" alt="<?php echo $cat_alt ?>" />
+				<a href="<?php echo $catLink; ?>">
+					<span class="imagebg" style="background-image:url('<?php echo $catImgSrc;?>');"></span>
+					<img src="<?php echo $catImgSrc ?>" alt="<?php echo $cat_alt ?>" />
 					<span class="catname"><span><?php echo $cat_name; ?></span></span>
 				</a>
 			</div>
