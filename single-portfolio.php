@@ -8,7 +8,7 @@
       <div class="swiper-container clear">
         <div class="swipe-projects swiper-wrapper">
             <?php $j=1; while(the_repeater_field('project_gallery')): ?>
-              <?php $image = wp_get_attachment_image_src(get_sub_field('project_images'), 'lightbox'); ?>
+              <?php $image = wp_get_attachment_image_src(get_sub_field('project_images'), 'full'); ?>
               <?php if ($image) { ?>
                 <div class="slick-slide swipeImg<?php echo ($j==1) ? ' slick-current slick-active slick-center':''?>">
                   <div class="imagediv" style="background-image:url('<?php echo $image[0]; ?>')"></div>
