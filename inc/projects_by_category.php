@@ -1,5 +1,6 @@
 <?php
 $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );	
+$current_term_id = ( isset($term->term_id) && $term->term_id ) ? $term->term_id : '';
 $wp_query = new WP_Query();
 $wp_query->query(array(
 	'post_type'=>'portfolio',
@@ -24,18 +25,33 @@ if($wp_query) { ?>
         $term_id = ( isset($term->term_id) && $term->term_id ) ? $term->term_id : 0;
         $pagelink = get_permalink();
         $imgSrc = wp_get_attachment_image_src($post_thumbnail_id,'thumbnail_large');
-        $img_url = ($imgSrc) ? $imgSrc[0] : get_bloginfo('template_url') . '/images/default-thumb.png';
+        $default_thumb = get_bloginfo('template_url') . '/images/image-not-available.jpg';
+        $img_url = ($imgSrc) ? $imgSrc[0] : $default_thumb;
         $post_edit_link = get_edit_post_link($post_id);
+        $catImages = get_field("category_based_image");
+        $feat_image_url =  $img_url;
+        $category_image = '';
+        $image_alt = '';
+        if($catImages) {
+            foreach($catImages as $c) {
+                $x_img = $c['image'];
+                $x_cat_id = $c['category'];
+                if($x_cat_id==$current_term_id) {
+                    $category_image = $x_img['url'];
+                    $feat_image_url = $category_image;
+                    $image_alt = $x_img['title'];
+                }
+            }
+        } 
+        $image_class = ($category_image || $imgSrc) ? 'has-image':'no-image';
+        $placeholder = get_bloginfo("template_url") . '/images/square.png';
         ?>
         <div id="proj-<?php echo $post_id?>" class="flexcol">
             <div class="inside clear">
-                <a class="boxlink" href="<?php echo $pagelink; ?>">
-                    <span class="thumbnail" style="background-image:url('<?php echo $img_url?>')">
-                        <?php  if ( has_post_thumbnail() ) { ?>
-                            <?php the_post_thumbnail('thumbnail_large'); ?>
-                        <?php } else { ?>
-                            <img src="<?php bloginfo('template_url'); ?>/images/default-thumb.png" width="130px" height="130px"/>
-                        <?php } ?>
+                <a class="boxlink <?php echo $image_class ?>" href="<?php echo $pagelink; ?>">
+                    <span class="thumbnail" style="background-image:url('<?php echo $feat_image_url?>')">
+                        <img src="<?php echo $feat_image_url ?>" alt="<?php echo $image_alt ?>" style="visibility:hidden;width:2px;height:2px;position:absolute;z-index:-99" />
+                        <img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
                     </span>
                     <span class="project-info">
                         <h2><?php the_title(); ?></h2>
