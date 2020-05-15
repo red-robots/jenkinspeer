@@ -2369,6 +2369,7 @@ img#wpstats {
 .featured-portfolio {
 	position: relative;
 	overflow:hidden;
+	height: 380px;
 	@include tab {
 		height: 70vh;
 	}
