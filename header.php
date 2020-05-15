@@ -80,6 +80,8 @@ var template_url = "<?php bloginfo('template_url'); ?>";
 
 	<?php if (is_home() || is_front_page()) { ?>
 		<?php get_template_part('inc/featured-projects'); ?>
+	<?php } else { ?>
+		<?php get_template_part('inc/subpage-banner'); ?>
 	<?php } ?>
 
 <div class="page-container wrapper">

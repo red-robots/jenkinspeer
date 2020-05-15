@@ -1,5 +1,6 @@
 <?php 
 $featured = get_field('home_featured_projects');
+$placeholder = get_bloginfo("template_url") . '/images/rectangle-lg.png';
 if ( $featured ) {  ?>
 <div id="featurePortfolio" class="featured-portfolio clear">
 	<div class="image-slider slides">
@@ -13,7 +14,7 @@ if ( $featured ) {  ?>
 			$projname = get_the_title($post_id);
 			if($img) { ?>
 			<div class="fp-image-wrap slide-group">
-				<img class="fp-image" src="<?php echo $img['url'] ?>" alt="<?php echo $projname; ?>" />
+				<div class="image" style="background-image:url('<?php echo $img['url'] ?>')"><img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder"></div>
 				<div class="fp-caption wrapper">
 					<div class="wrapper">
 						<div class="bottom">
