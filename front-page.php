@@ -23,8 +23,11 @@ get_header(); ?>
 		</section>	
 		<?php } ?>
 
-		<?php get_template_part('inc/latest-news'); ?>
+		<?php if ( do_shortcode('[instagram-feed]') ) { ?>
+		<div id="instagram_feeds" class="instagram_feeds clear"><?php echo do_shortcode('[instagram-feed]'); ?></div>
+		<?php } ?>
 
+		<?php get_template_part('inc/latest-news'); ?>
 	<?php endwhile; ?>
 </div><!-- #primary -->
 <?php get_footer(); ?>

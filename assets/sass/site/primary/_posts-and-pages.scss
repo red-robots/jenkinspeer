@@ -72,11 +72,11 @@
 	overflow: hidden;
 }
 h2.redsubtitle {
-	color: #EF4035;
+	color: $color-red;
 	
 }
 h1.news-title {
-	color: #EF4035;
+	color: $color-red;
 	text-transform:uppercase;
 	margin: 10px 0 20px 10px;
 	
@@ -93,7 +93,7 @@ h1.news-title {
 	/*font-family: 'Oranienbaum', serif;*/
 	font-family: 'Crimson Text', serif;
 	font-weight: 400italic;
-	border-bottom: 1px solid #EF4035;
+	border-bottom: 1px solid $color-red;
 	font-size: 18px;
 }
 .service-image {
@@ -125,7 +125,7 @@ h1.news-title {
 	border-left: 4px solid #eee;
 }
 .sideservice ul li a:hover {
-	border-left: 4px solid #EF4035;
+	border-left: 4px solid $color-red;
 }
 .sideservice ul li h2 {
 	
@@ -208,7 +208,7 @@ section[role="banner"] {
 	width: 100%;
 	margin-bottom: 20px;
 	margin-top: 10px;
-	border-bottom: 1px solid #EF4035;
+	border-bottom: 1px solid $color-red;
 	overflow: hidden;
 }
 .subnav ul.cat-menu,
@@ -243,14 +243,14 @@ section[role="banner"] {
 	display: block;
 	padding: 13px;
 	text-decoration:none;
-	color: #EF4035;
+	color: $color-red;
 	font-weight:bold;
 	font-size: 14px;
 	text-transform: uppercase;
 }
 .subnav li a:hover, .subnav li a.active {
 	color: #fff;
-	background-color: #EF4035;
+	background-color: $color-red;
 	
 }
 /*  
@@ -259,7 +259,7 @@ section[role="banner"] {
 .portfolio-content {
 	width: 100%;
 	margin: 30px 0 0 0;
-	border-top: 1px solid #EF4035;
+	border-top: 1px solid $color-red;
 	padding: 10px 0 0 0;	
 }
 .image-wrapper {
@@ -292,7 +292,7 @@ section[role="banner"] {
 }
 .port-post-div a:hover, .viewall-div a:hover {
 	opacity: 1;
-	color: #EF4035;
+	color: $color-red;
 }
 #proj-page-left {
 	width: 100%;
@@ -542,9 +542,9 @@ span.plain-text  {
 .award h2 {
 	font-size: 16px;
 	line-height: 1.2 !important;
-	color: #EF4035;
+	color: $color-red;
 	margin: 0 0 8px 0;
-	border-bottom: 1px solid #EF4035;
+	border-bottom: 1px solid $color-red;
 }
 .award-city {
 	font-size: 12px;
@@ -561,7 +561,7 @@ h2.allprojs  {
 	margin: 20px 0 20px 0;
 	font-family: 'Crimson Text', serif;
 	font-style: italic;
-	border-bottom: 1px solid #EF4035;
+	border-bottom: 1px solid $color-red;
 	padding: 0 0 5px 0;
 	font-weight:normal;
 }
@@ -603,7 +603,7 @@ h2.allprojs:before {
 	border-top: 4px solid #D2D2D2;
 }
 .blog_hover {
-	border-top: 4px solid #EF4035;
+	border-top: 4px solid $color-red;
 }
 .blogpost, .blogsearch {
 	position: relative;
@@ -679,7 +679,7 @@ li.searchlist a {
 	text-decoration: none;
 }
 .person a:hover {
-	color: #EF4035 !important;
+	color: $color-red !important;
 }
 .peopleinfo {
 	display: none;
@@ -808,7 +808,7 @@ font-weight: 400italic;
 }
 .featured-post-link a {
 	text-decoration: none;
-	color: #EF4035;
+	color: $color-red;
 }
 /* =Main content and comment content
 -------------------------------------------------------------- */
@@ -841,13 +841,13 @@ h1.page-title {
 	margin-left: 15px;		
 }
 h1.page-title a {
-	color: #EF4035;
+	color: $color-red;
 	text-decoration:none;	
 }
 h1.category-title {
 	font-size: 14px;
 	text-transform: uppercase;
-	color: #EF4035;
+	color: $color-red;
 	margin-left: 0;
 	margin-bottom: 0;
 	text-align: center;
@@ -861,7 +861,7 @@ h1.category-title {
 	}	
 }
 h1.category-title a {
-	color: #EF4035;
+	color: $color-red;
 	text-decoration:none;	
 }
 a.viewall {
@@ -1365,7 +1365,7 @@ ul.peoplelist li a {
 	border-left: 3px solid #eee;
 }
 ul.peoplelist li a:hover {
-	border-left: 3px solid #EF4035;
+	border-left: 3px solid $color-red;
 }
 .people-pic-side {
 	width: 30px;
@@ -1494,7 +1494,7 @@ img#wpstats {
 	}
 }
 .jcarousel-skin-tango .jcarousel-item a:hover {
-	color: #EF4035;
+	color: $color-red;
 }
 
 .jcarousel-skin-tango .jcarousel-item-horizontal {
@@ -1982,8 +1982,8 @@ img#wpstats {
 	======================================*/
 	.subnav {
 		text-align: left;
-		border-top: 1px solid #EF4035;
-		border-bottom: 1px solid #EF4035;
+		border-top: 1px solid $color-red;
+		border-bottom: 1px solid $color-red;
 	}
 	.subnav ul.cat-menu,
 	.subnav div.cat-menu > ul {
@@ -2877,6 +2877,19 @@ body.home .page-container {
 			}
 		}
 	}
+	.news-thumb {
+		width: 100%;
+		float: left;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		margin-bottom: 15px;
+		img {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+	}
 }
 
 .view-all-button {
@@ -3296,8 +3309,22 @@ body.single-portfolio .page-container {
 		}
 	}
 }
-
 .full-width {
 	padding-left: 30px;
 	padding-right: 30px;
+}
+.latest-news-list.section {
+	padding-top: 0;
+}
+.instagram_feeds {
+	padding-top: 50px;
+	padding-bottom: 0;
+	margin-top: 30px;
+	position: relative;
+	#sbi_load {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
 }

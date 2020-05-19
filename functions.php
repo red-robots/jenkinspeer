@@ -365,4 +365,13 @@ function twentytwelve_customize_preview_js() {
 add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
 
 
-
+function get_instagram_setup() {
+	global $wpdb;
+	$result = $wpdb->get_row( "SELECT option_value FROM $wpdb->options WHERE option_name = 'sb_instagram_settings'" );
+	if($result) {
+		$option = ($result->option_value) ? @unserialize($result->option_value) : false;
+	} else {
+		$option = '';
+	}
+	return $option;
+}

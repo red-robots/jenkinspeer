@@ -49,7 +49,6 @@
       </div>
 
       <?php get_template_part('inc/related-projects'); ?>
-
     </div>
 
   <?php endwhile;  endif; ?>
