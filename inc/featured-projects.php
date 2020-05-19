@@ -3,6 +3,7 @@ $featured = get_field('home_featured_projects');
 $placeholder = get_bloginfo("template_url") . '/images/rectangle-lg.png';
 if ( $featured ) {  ?>
 <div id="featurePortfolio" class="featured-portfolio clear">
+	<div class="spinnerWrap"><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
 	<div class="image-slider slides">
 	<?php foreach($featured as $p) {  
 			$custom_name = $p['project_custom_name'];
