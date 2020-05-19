@@ -23,14 +23,19 @@ get_header(); ?>
 		</section>	
 		<?php } ?>
 
-		<?php if ( $instagramFeeds = do_shortcode('[instagram-feed]') ) { 
+		<?php 
+		$has_instagram = 'no-instagram';
+		if ( $instagramFeeds = do_shortcode('[instagram-feed]') ) { 
 			$has_error = (strpos($instagramFeeds, 'No connected account') !== false) ? true : false; ?>
-			<?php if ($has_error==false) { ?>
+			<?php if ($has_error==false) { $has_instagram='has-instagram'; ?>
 			<div id="instagram_feeds" class="instagram_feeds clear"><?php echo do_shortcode('[instagram-feed]'); ?></div>
 			<?php } ?>
 		<?php } ?>
-
-		<?php get_template_part('inc/latest-news'); ?>
+		
+		<div class="home-news cf <?php echo $has_instagram ?>">
+			<?php get_template_part('inc/latest-news'); ?>
+		</div>
+		
 	<?php endwhile; ?>
 </div><!-- #primary -->
 <?php get_footer(); ?>
