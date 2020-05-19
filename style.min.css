@@ -2328,7 +2328,7 @@ footer.entry-meta,footer.entry-meta a{color:#444;font-size:10pt}
 .featured-portfolio .wrapper{position:relative;height:100%}
 .featured-portfolio .fp-image-wrap{background-size:cover;background-color:#CCC;background-repeat:no-repeat;background-position:center;width:100%;height:100%;position:relative;z-index:15}
 .featured-portfolio .fp-image{width:100%;height:auto;float:left}
-.featured-portfolio .image-slider{width:100%;height:100%;position:relative;box-sizing:border-box;color:#FFF;float:left}
+.featured-portfolio .image-slider{width:100%;height:100%;position:relative;box-sizing:border-box;color:#FFF;float:left;z-index:10}
 .featured-portfolio .slide-group{display:none !important}
 .featured-portfolio .slide-group.flex-active-slide{display:block !important}
 .featured-portfolio .fp-caption{max-width:100%;width:100%;height:100%;margin:0 auto;position:absolute;top:0;left:0;z-index:10}
