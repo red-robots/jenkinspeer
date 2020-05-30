@@ -1,4 +1,7 @@
 /*======= Old Site CSS ==== */
+a, input, button {
+	transition: all ease .3s;
+}
 .cf:before, .cf:after {
     content: " "; 
     display: table; 
@@ -3335,6 +3338,117 @@ body.single-portfolio .page-container {
 		width: 100%;
 	}
 }
+
+/* People Page */
+.people-page {
+	width: 100%!important;
+	.team-posts {
+		margin: 30px 0 80px;
+	}
+	.flexwrap {
+		margin-left: -10px;
+		margin-right: -10px;
+		@include flexgroup();
+		@include flexbox-justify(center);
+	}
+	.teamInfo {
+		width: 100%;
+		position: relative;
+		padding: 10px;
+		@include xs {
+			width: 50%;
+		}
+		@include mid {
+			width: 25%;
+		}
+		.info {
+			display: block;
+			width: 100%;
+			float: left;
+			text-decoration: none;
+			position: relative;
+			border: 2px solid #FFF;
+			overflow: hidden;
+			* {
+				transition: all ease .3s;
+			}
+			&:hover {
+				border-color: $color-red;
+				box-shadow: 0 0 8px rgba(0,0,0,0.35);
+			}
+		}
+		.photo {
+			display: block;
+			width: 100%;
+			float: left;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #CCC;
+			// border: 2px solid #FFF;
+			img {
+				width: 100%;
+				height: auto;
+				float: left;
+			}
+		}
+		// .info:hover .photo {
+		// 	border-color: $color-red;
+		// }
+		.text {
+			display: block;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			z-index: 10;
+			color: #FFF;
+			padding: 0 15px 10px;
+			font-size: 13px;
+			line-height: 1.1;
+			&:after {
+				content:"";
+				display: block;
+				width: 100%;
+				height: 165%;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 81%, rgba(0,0,0,0.65) 99%);
+				background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 81%,rgba(0,0,0,0.65) 99%);
+				background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 81%,rgba(0,0,0,0.65) 99%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+			}
+			span {
+				display: block;
+				width: 100%;
+				position: relative;
+				z-index: 5;
+			}
+			.team-title {
+				font-size: 11px;
+			}
+		}
+	}
+	.people-categories {
+		text-align: center;
+		margin-bottom: 10px;
+		a {
+			display: inline-block;
+			text-decoration: none;
+			position: relative;
+			padding: 5px 15px;
+			color: $color__text-main;
+			&:hover {
+				color: tint($color__text-main,50%);
+			}
+			&.active {
+				color: $color-red;
+			}
+		}
+	}
+}
+
 
 .spinnerWrap {
 	width: 100%;

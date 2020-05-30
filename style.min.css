@@ -1874,7 +1874,8 @@ footer[role="contentinfo"] a:hover{color:#21759b}
 @media screen and (min-width:600px){.header-wrapper .left-column{width:39.9%}
 }.header-wrapper .right-column{width:100%;float:left}
 @media screen and (min-width:600px){.header-wrapper .right-column{width:59.9%}
-}.cf:before,.cf:after{content:" ";display:table}
+}a,input,button{-webkit-transition:all ease .3s;transition:all ease .3s}
+.cf:before,.cf:after{content:" ";display:table}
 .cf:after{clear:both}
 .cf{*zoom:1}
 .author .archive-header{margin-bottom:24px}
@@ -2492,6 +2493,25 @@ body.single-portfolio .page-container .content-wrapper{padding-top:50px}
 .home-news.has-instagram .latest-news-list.section{padding-top:0}
 .instagram_feeds{padding-top:50px;padding-bottom:0;margin-top:30px;position:relative}
 .instagram_feeds #sbi_load{position:absolute;top:0;left:0;width:100%}
+.people-page{width:100% !important}
+.people-page .team-posts{margin:30px 0 80px}
+.people-page .flexwrap{margin-left:-10px;margin-right:-10px;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.people-page .teamInfo{width:100%;position:relative;padding:10px}
+@media(min-width:480px){.people-page .teamInfo{width:50%}
+}@media(min-width:900px){.people-page .teamInfo{width:25%}
+}.people-page .teamInfo .info{display:block;width:100%;float:left;text-decoration:none;position:relative;border:2px solid #FFF;overflow:hidden}
+.people-page .teamInfo .info *{-webkit-transition:all ease .3s;transition:all ease .3s}
+.people-page .teamInfo .info:hover{border-color:#da291c;box-shadow:0 0 8px rgba(0,0,0,0.35)}
+.people-page .teamInfo .photo{display:block;width:100%;float:left;background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#CCC}
+.people-page .teamInfo .photo img{width:100%;height:auto;float:left}
+.people-page .teamInfo .text{display:block;width:100%;position:absolute;left:0;bottom:0;z-index:10;color:#FFF;padding:0 15px 10px;font-size:13px;line-height:1.1}
+.people-page .teamInfo .text:after{content:"";display:block;width:100%;height:165%;position:absolute;left:0;bottom:0;background:-webkit-linear-gradient(top,transparent 0,rgba(0,0,0,0.65) 81%,rgba(0,0,0,0.65) 99%);background:linear-gradient(to bottom,transparent 0,rgba(0,0,0,0.65) 81%,rgba(0,0,0,0.65) 99%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000',endColorstr='#a6000000',GradientType=0)}
+.people-page .teamInfo .text span{display:block;width:100%;position:relative;z-index:5}
+.people-page .teamInfo .text .team-title{font-size:11px}
+.people-page .people-categories{text-align:center;margin-bottom:10px}
+.people-page .people-categories a{display:inline-block;text-decoration:none;position:relative;padding:5px 15px;color:#666}
+.people-page .people-categories a:hover{color:#b3b3b3}
+.people-page .people-categories a.active{color:#da291c}
 .spinnerWrap{width:100%;height:100%;position:absolute;top:0;left:0;text-align:center;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .spinnerWrap .lds-spinner{display:inline-block}
 .lds-spinner{color:official;display:inline-block;position:relative;width:80px;height:80px}

@@ -2,130 +2,94 @@
 /**
  * Template Name: People
  */
-
-get_header(); ?>
-
-	<div id="primary" class="site-content">
-		<div id="content" role="main">
-
-			
-				
-                
-                <!--<h1 class="page-title">Firm</h1>-->
-                
-                <div class="left-cont-pad firmpara">
-                <div class="entry-content">
-                 <h2 class="redsubtitle"><?php the_title() ?></h2>
-        			<div class="short-descr"><?php the_field('page_short_description'); ?></div>
-                
-    <?php $wp_query = new WP_Query();
-    $wp_query->query(array(
-    'post_type'=>'people',
-    'posts_per_page' => -1,
-	'orderby'   => 'menu_order',
-    'order'     => 'ASC',
-    'tax_query'=>array(array(
-        'taxonomy'=>'people_categories',
-        'field'=>'term_id',
-        'terms'=>array(69)
-    ))
-));
-    if ($wp_query->have_posts()) : ?>
-    <?php while ($wp_query->have_posts()) : ?>
+get_header(); 
+$current_url = get_permalink(); ?>
+<div id="primary" class="site-content people-page">
+	<div id="content" role="main">
+        <?php while ( have_posts() ) : the_post(); ?>
+		  <h1 class="page-title" style="display:none;"><?php the_title(); ?></h1>
+          <?php if ( get_the_content() ) { ?>
+            <div class="entry-content"><?php the_content(); ?></div>
+          <?php } ?>
+        <?php endwhile; // end of the loop. ?>
         
-    <?php $wp_query->the_post(); ?>
+
+        <?php  
+        /* Team Posts */
+        $taxonomy = 'people_categories';
+        $posttype = 'people';
+        $currentCat = ( isset($_GET['cat']) && $_GET['cat'] ) ? $_GET['cat'] : ''; 
+        $args = array(
+            'posts_per_page'=> -1,
+            'post_type'     => $posttype,
+            'post_status'   => 'publish',
+        );
     
-    
-    <?php 
-        // Get field Name
-        $image = get_field('photo'); 
-        $url = $image['url'];
-        $title = $image['title'];
-        $alt = $image['alt'];
-        $caption = $image['caption'];
-     
-        // size or custom size that will go
-        // into the "thumb" variable.
-        $size = 'peoplelist';
-        $thumb = $image['sizes'][ $size ];
-        $width = $image['sizes'][ $size . '-width' ];
-        $height = $image['sizes'][ $size . '-height' ];
-        ?>
-    
-    	<div class="person blocks">
-        	<a href="<?php the_permalink(); ?>">
-           
-            
-        	<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" title="<?php echo $title; ?>" />
-            <div class="page-peep-name"><?php the_title(); ?></div>
-            <div class="page-peep-title"><?php the_field('company_title'); ?></div>
-          </a>  
-        </div><!-- person -->
-    
-    <?php endwhile; ?>
-    <div class="clear"></div>
-    <?php endif; wp_reset_postdata(); wp_reset_query(); ?>
-    
-    </div><!-- entry content -->
-    <div class="entry-content">
-    <h2 class="redsubtitle"><?php the_field("principal_emeritus_title"); ?></h2>
-    <div class="short-descr"><?php the_field('principal_emeritus_description'); ?></div>
-    
-    <?php $wp_query = new WP_Query();
-    $wp_query->query(array(
-    'post_type'=>'people',
-    'posts_per_page' => -1,
-	'orderby'   => 'menu_order',
-    'order'     => 'ASC',
-    'tax_query'=>array(array(
-        'taxonomy'=>'people_categories',
-        'field'=>'term_id',
-        'terms'=>array(68)
-    ))
-));
-    if ($wp_query->have_posts()) : ?>
-    <?php while ($wp_query->have_posts()) : ?>
+        if($currentCat && is_numeric($currentCat)) {
+            $args['tax_query'][] = array(
+                    'taxonomy'=>$taxonomy,
+                    'field'=>'term_id',
+                    'terms'=>array($currentCat)
+                );
+        }
+
         
-    <?php $wp_query->the_post(); ?>
-    
-    
-    <?php 
-        // Get field Name
-        $image = get_field('photo'); 
-        $url = $image['url'];
-        $title = $image['title'];
-        $alt = $image['alt'];
-        $caption = $image['caption'];
-     
-        // size or custom size that will go
-        // into the "thumb" variable.
-        $size = 'peoplelist';
-        $thumb = $image['sizes'][ $size ];
-        $width = $image['sizes'][ $size . '-width' ];
-        $height = $image['sizes'][ $size . '-height' ];
-        ?>
-    
-    	<div class="person blocks">
-        	<a href="<?php the_permalink(); ?>">
-           
-            
-        	<img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" title="<?php echo $title; ?>" />
-            <div class="page-peep-name"><?php the_title(); ?></div>
-            <div class="page-peep-title"><?php the_field('company_title'); ?></div>
-          </a>  
-        </div><!-- person -->
-    
-    <?php endwhile; ?>
-    <div class="clear"></div>
-    <?php endif; wp_reset_postdata(); wp_reset_query(); ?>
-                
-                </div><!-- entry content -->
-                </div><!-- left content pad -->
-                
-       
+        $terms = get_terms( array(
+            'taxonomy' => $taxonomy,
+            'hide_empty' => true,
+        ));
 
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php get_sidebar('firm'); ?>
+        $teams = new WP_Query($args);
+        if ( $teams->have_posts() ) {  ?>   
+        <section class="team-posts">
+            <?php if ($terms) { ?>
+            <div class="people-categories">
+                <div class="wrap">
+                    <a href="<?php echo $current_url ?>" class="<?php echo (empty($currentCat)) ? 'all active':'all'?>">All</a>
+                    <?php foreach ($terms as $term) { 
+                    $term_id = $term->term_id;
+                    $term_slug = $term->slug;
+                    $term_name = $term->name;
+                    //$term_link = get_term_link($term,$taxonomy);
+                    $term_link = $current_url . '?cat=' . $term_id;
+                    $is_active = ( ($currentCat) && $term_id==$currentCat ) ? ' active':'';
+                    ?>
+                    <a href="<?php echo $term_link ?>" class="cat-<?php echo $term_slug . $is_active ?>"><?php echo $term_name ?></a>
+                    <?php } ?>
+                </div>
+            </div>  
+            <?php } ?>
+            <div class="flexwrap">
+            <?php $i=1; while ( $teams->have_posts() ) : $teams->the_post();  
+                $image = get_field('photo'); 
+                $name = get_the_title();
+                $url = $image['url'];
+                //$title = $image['title'];
+                $title = get_field('company_title');
+                $alt = $image['alt'];
+                $caption = $image['caption'];
+                $link = get_permalink();
+                $placeholder = get_bloginfo("template_url") . "/images/square.png";
+                $imageURL = ($image) ? "'".$image['url']."'" : '';
+                $style = ($image) ? ' style="background-image:url('.$imageURL.')"':'';
+                ?>
+                <div class="teamInfo">
+                    <a href="<?php echo $link ?>" class="info">
+                        <span class="photo <?php echo ($image) ? 'yes':'no'; ?>"<?php echo $style ?>>
+                            <img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />
+                        </span>
+                        <span class="text">
+                            <span class="team-name"><?php echo $name ?></span>
+                            <?php if ($title) { ?>
+                            <span class="team-title"><?php echo $title ?></span>
+                            <?php } ?>
+                        </span>
+                    </a>
+                </div>
+            <?php $i++; endwhile; wp_reset_postdata(); ?>
+            </div>
+        </section>
+        <?php } ?>
+	</div><!-- #content -->
+</div><!-- #primary -->
 <?php get_footer(); ?>
