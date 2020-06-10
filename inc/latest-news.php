@@ -29,9 +29,9 @@ if ( $news->have_posts() ) {  ?>
 			</div>
 		<?php endwhile; wp_reset_postdata(); ?>
 		</div>
-		<div class="view-all-button">
-			<a class="btngrey" href="<?php echo get_site_url(); ?>/news/">All News <span class="arrow"><i class="fas fa-chevron-right"></i></span></a>
-		</div>
+		<!-- <div class="view-all-button">
+			<a class="btngrey" href="<?php //echo get_site_url(); ?>/news/">All News <span class="arrow"><i class="fas fa-chevron-right"></i></span></a>
+		</div> -->
 	</div>
 </section>
 <?php } ?>

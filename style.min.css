@@ -2037,9 +2037,9 @@ form.search-form{width:195px;margin:10px auto;overflow:hidden}
 input.search-field{background-color:#e9e9e9;border-radius:0;border:0;text-align:right;width:150px;float:right}
 h1.page-title{font-size:14px;text-transform:uppercase;color:#999;margin-left:15px}
 h1.page-title a{color:#da291c;text-decoration:none}
-h1.category-title{font-size:14px;text-transform:uppercase;color:#da291c;margin-left:0;margin-bottom:0;text-align:center;border-bottom:1px solid #da291c;padding-bottom:10px}
-@media screen and (min-width:600px){h1.category-title{text-align:left;border-bottom:0;padding-bottom:0;margin-bottom:8px}
-}h1.category-title a{color:#da291c;text-decoration:none}
+h1.category-title,h2.category-title{font-size:14px;text-transform:uppercase;color:#da291c;margin-left:0;margin-bottom:0;text-align:center;border-bottom:1px solid #da291c;padding-bottom:10px}
+@media screen and (min-width:600px){h1.category-title,h2.category-title{text-align:left;border-bottom:0;padding-bottom:0;margin-bottom:8px}
+}h1.category-title a,h2.category-title a{color:#da291c;text-decoration:none}
 a.viewall{color:#999 !important}
 .entry-meta{clear:both}
 .entry-header{margin-bottom:24px}
@@ -2491,8 +2491,10 @@ body.single-portfolio .page-container .content-wrapper{padding-top:50px}
 @media screen and (min-width:600px){.site-footer .footer-site-info{margin-bottom:0}
 }.full-width{padding-left:30px;padding-right:30px}
 .home-news.has-instagram .latest-news-list.section{padding-top:0}
+.latest-news-list.section{padding-bottom:0}
 .instagram_feeds{padding-top:50px;padding-bottom:0;margin-top:30px;position:relative}
 .instagram_feeds #sbi_load{position:absolute;top:0;left:0;width:100%}
+#sb_instagram .sbi_photo_wrap a.sbi_photo{background-color:#CCC}
 .people-page{width:100% !important}
 .people-page .team-posts{margin:30px 0 80px}
 .people-page .flexwrap{margin-left:-10px;margin-right:-10px;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-justify-content:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}

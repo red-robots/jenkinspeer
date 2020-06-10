@@ -847,7 +847,8 @@ h1.page-title a {
 	color: $color-red;
 	text-decoration:none;	
 }
-h1.category-title {
+h1.category-title,
+h2.category-title {
 	font-size: 14px;
 	text-transform: uppercase;
 	color: $color-red;
@@ -863,7 +864,8 @@ h1.category-title {
 		margin-bottom: 8px;
 	}	
 }
-h1.category-title a {
+h1.category-title a,
+h2.category-title a {
 	color: $color-red;
 	text-decoration:none;	
 }
@@ -3325,7 +3327,9 @@ body.single-portfolio .page-container {
 		padding-top: 0;
 	}
 }
-
+.latest-news-list.section {
+	padding-bottom: 0;
+}
 .instagram_feeds {
 	padding-top: 50px;
 	padding-bottom: 0;
@@ -3336,6 +3340,11 @@ body.single-portfolio .page-container {
 		top: 0;
 		left: 0;
 		width: 100%;
+	}
+}
+#sb_instagram .sbi_photo_wrap {
+	a.sbi_photo {
+		background-color: #CCC; 
 	}
 }
 

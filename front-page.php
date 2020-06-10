@@ -22,6 +22,10 @@ get_header(); ?>
 			</div>	
 		</section>	
 		<?php } ?>
+		
+		<div class="home-news cf <?php echo $has_instagram ?>">
+			<?php get_template_part('inc/latest-news'); ?>
+		</div>
 
 		<?php 
 		$has_instagram = 'no-instagram';
@@ -31,10 +35,6 @@ get_header(); ?>
 			<div id="instagram_feeds" class="instagram_feeds clear"><?php echo do_shortcode('[instagram-feed]'); ?></div>
 			<?php } ?>
 		<?php } ?>
-		
-		<div class="home-news cf <?php echo $has_instagram ?>">
-			<?php get_template_part('inc/latest-news'); ?>
-		</div>
 		
 	<?php endwhile; ?>
 </div><!-- #primary -->

@@ -13,7 +13,7 @@ get_header(); ?>
 			
 				
             <?php if(have_posts()) : while(have_posts()) : the_post(); ?>    
-              <!--  <h1 class="page-title"><?php the_title(); ?></h1>-->
+            <h2 class="page-title" style="position:absolute;top:-100vh;z-index:-999;"><?php the_title() ?></h2>
             <?php endwhile; endif; wp_reset_postdata(); ?>
                 
                

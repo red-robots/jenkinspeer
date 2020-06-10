@@ -8,11 +8,10 @@ get_header(); ?>
 <div id="primary" class="full-content-area clear">
 		<div id="content">
         
-        <h1 class="category-title"><?php the_title(); ?> | 
-            <a class="viewall" href="#viewall">
-                View All
-            </a>
-        </h1>
+        <div class="pageheader">
+            <h2 class="category-title" style="display:inline-block;"><?php the_title(); ?></h2> <span style="color:#da291c;padding:0 3px">|</span> <a class="viewall" href="#viewall">View All</a>
+        </div>
+        
 
 
 
