@@ -2349,8 +2349,12 @@ footer.entry-meta,footer.entry-meta a{color:#444;font-size:10pt}
 }.featured-portfolio .flex-control-nav li a.flex-active{background:#da291c}
 .featured-portfolio .flex-control-nav li:hover a{opacity:.65}
 .featured-portfolio .flex-control-nav li:hover a.flex-active{opacity:1}
-.subpage-banner{width:100%;position:relative;overflow:hidden;margin-bottom:30px}
-.subpage-banner div.image{width:100%;float:left}
+.subpage-banner{width:100%;position:relative;overflow:hidden;margin-bottom:30px;height:380px;background-color:#c3c3c3}
+@media(min-width:600px){.subpage-banner{height:70vh}
+}@media(min-width:900px){.subpage-banner{height:75vh}
+}.subpage-banner div.image{width:100%;height:100%;float:left}
+.subpage-banner .bgImage{background-size:cover;background-position:center;background-repeat:no-repeat}
+.subpage-banner .bgImage img.placeholder{width:100%;height:auto;float:left}
 .subpage-banner img.hero-image{width:100%;height:auto;float:left}
 .flexrow{margin-left:-15px;margin-right:-15px}
 @media screen and (min-width:600px){.flexrow{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}

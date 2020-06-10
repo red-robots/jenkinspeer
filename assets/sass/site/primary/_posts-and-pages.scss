@@ -2559,9 +2559,28 @@ img#wpstats {
 	position: relative;
 	overflow:hidden;
 	margin-bottom: 30px;
+	height: 380px;
+	background-color: #c3c3c3;
+	@include tab {
+		height: 70vh;
+	}
+	@include mid {
+		height: 75vh;
+	}
 	div.image {
 		width: 100%;
+		height: 100%;
 		float: left;
+	}
+	.bgImage {
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		img.placeholder {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
 	}
 	img.hero-image {
 		width: 100%;
