@@ -2746,7 +2746,12 @@ body.home .page-container {
 
 .home-column-text {
 	background: $color-grey;
+	.full-wrapper {
+		width: 100%;
+		float: left;
+	}
 	.flexrow {
+		@include flexgroup;
 		margin-left: 0;
   		margin-right: 0;
 		@media screen and (min-width: $tabwidth) {
@@ -2763,11 +2768,7 @@ body.home .page-container {
 		}
 	}
 	.column {
-		box-sizing: border-box;
-		@media screen and (min-width: $tabwidth) {
-			width: 49.9%;
-			float: left;
-		}
+		width: 100%;
 		p {
 			margin-top: 0;
 		}
@@ -2780,23 +2781,38 @@ body.home .page-container {
 		}
 
 		&.right {
-			border-right: none;
-			@media screen and (min-width: $tabwidth) {
-				border-right: 1px solid #757575;
-			}
+			// border-right: none;
+			// @media screen and (min-width: $tabwidth) {
+			// 	border-right: 1px solid #757575;
+			// }
+			// .inside {
+			// 	border-bottom: 1px solid #757575;
+			// 	@media screen and (min-width: $tabwidth) {
+			// 		border-bottom: none;
+			// 	}
+			// }
 			.inside {
-				border-bottom: 1px solid #757575;
-				@media screen and (min-width: $tabwidth) {
-					border-bottom: none;
-				}
+				background-size: cover;
+				background-position: top center;
+				background-repeat: no-repeat;
+				width: 100%;
+				height: 100%;
+				float: left;
+			}
+			
+			img {
+				width: 100%;
+				height: auto;
+				float: left;
 			}
 		}
 		&.left {
+			@include flexgroup-center();
 			.inside {
-				padding-top: 35px;
+				width: 100%;
+				padding: 30px;
 				@media screen and (min-width: $tabwidth) {
-					padding-top: 0;
-					padding-left: 50px;
+					padding: 5vw;
 				}
 			}
 			p {
@@ -2821,6 +2837,15 @@ body.home .page-container {
 			font-family: $font-times;
 			line-height: 1.2;
 			color: $color-red;
+		}
+	}
+	&.half {
+		.column {
+			width: 100%;
+			@media screen and (min-width: $tabwidth) {
+				width: 50%;
+				float: left;
+			}
 		}
 	}
 }
