@@ -1091,8 +1091,9 @@ section[role="banner"] {
 */
 .portfolio-content {
 	width: 100%;
-	margin: 30px 0 0 0;
-	border-top: 1px solid $color-red;
+	// margin: 30px 0 0 0;
+	// border-top: 1px solid $color-red;
+	margin: 0 0;
 	padding: 10px 0 0 0;	
 }
 .image-wrapper {
@@ -4454,6 +4455,7 @@ body.single-portfolio .page-container {
 	padding-left: 30px;
 	padding-right: 30px;
 	margin-bottom: 20px;
+	margin-top: 15px;
 	form {
 		display: block;
 		max-width: 1000px;

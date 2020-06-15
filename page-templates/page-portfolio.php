@@ -9,19 +9,17 @@ get_header(); ?>
 		<div id="content">
         
         <div class="pageheader">
-            <h2 class="category-title" style="display:inline-block;"><?php the_title(); ?></h2> <span style="color:#da291c;padding:0 3px">|</span> <a class="viewall" href="#viewall">View All</a>
+            <h2 class="category-title" style="display:inline-block;"><?php the_title(); ?></h2>
         </div>
         
 
 
 
-<?php get_template_part('inc/tax-subnav-portfolio'); ?>
+<?php //get_template_part('inc/tax-subnav-portfolio'); ?>
 <?php //get_template_part('inc/portfolio-squares'); ?>
-<?php get_template_part('inc/project-categories'); ?>
+<?php //get_template_part('inc/project-categories'); ?>
+<?php //wp_reset_query(); ?>
 
-<?php wp_reset_query(); ?>
-
-<a name="viewall"></a>
 
 <?php while(have_posts()) : the_post(); ?>
 	<div class="portfolio-content clear">

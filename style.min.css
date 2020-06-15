@@ -2048,7 +2048,7 @@ section[role="banner"]{margin-bottom:48px}
 .subnav li{text-align:center;width:auto;display:block}
 .subnav li a{display:block;padding:13px;text-decoration:none;color:#da291c;font-weight:bold;font-size:14px;text-transform:uppercase}
 .subnav li a:hover,.subnav li a.active{color:#fff;background-color:#da291c}
-.portfolio-content{width:100%;margin:30px 0 0 0;border-top:1px solid #da291c;padding:10px 0 0 0}
+.portfolio-content{width:100%;margin:0;padding:10px 0 0 0}
 .image-wrapper{cursor:pointer}
 .thumbnail{margin:0 0 10px 0}
 .thumbnail,.thumbnail img{width:100%}
@@ -2668,7 +2668,7 @@ body.single-portfolio .page-container .content-wrapper{padding-top:50px}
 }.blog .format-aside .entry-title,.archive .format-aside .entry-title{display:none}
 .comment-content a{word-wrap:break-word}
 .bypostauthor{display:block}
-.postsFiterWrap{width:100%;float:left;padding-left:30px;padding-right:30px;margin-bottom:20px}
+.postsFiterWrap{width:100%;float:left;padding-left:30px;padding-right:30px;margin-bottom:20px;margin-top:15px}
 .postsFiterWrap form{display:block;max-width:1000px;width:100%;margin:0 auto;position:relative}
 .postsFiterWrap form input[type="submit"]{position:absolute;top:0;right:0;z-index:5}
 .postsFiterWrap .selectStyleWrap{width:33.33%;float:left;padding-left:10px;padding-right:10px}
