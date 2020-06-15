@@ -73,7 +73,7 @@ $current_url = get_permalink(); ?>
                 $imageURL = ($image) ? "'".$image['url']."'" : '';
                 $style = ($image) ? ' style="background-image:url('.$imageURL.')"':'';
                 ?>
-                <div class="teamInfo">
+                <div class="teamInfo animated fadeIn">
                     <a href="<?php echo $link ?>" class="info">
                         <span class="photo <?php echo ($image) ? 'yes':'no'; ?>"<?php echo $style ?>>
                             <img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" />

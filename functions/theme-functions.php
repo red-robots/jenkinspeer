@@ -117,118 +117,119 @@ function custom_upload_mimes ( $existing_mimes=array() ) {
 			Custom Post Types 
 			
 ===============================*/
+require( get_template_directory() . '/functions/post-types.php' );
 
-add_action('init', 'js_custom_init');
-function js_custom_init() 
-{
+// add_action('init', 'js_custom_init');
+// function js_custom_init() 
+// {
 
   
   
-  // Register the Projects ... 
+//   // Register the Projects ... 
   
-   $labels = array(
-	'name' => _x('Portfolio', 'post type general name'),
-    'singular_name' => _x('Portfolio', 'post type singular name'),
-    'add_new' => _x('Add New', 'Portfolio'),
-    'add_new_item' => __('Add New Portfolio'),
-    'edit_item' => __('Edit Portfolio'),
-    'new_item' => __('New Portfolio'),
-    'view_item' => __('View Portfolio'),
-    'search_items' => __('Search Portfolio'),
-    'not_found' =>  __('No Portfolio found'),
-    'not_found_in_trash' => __('No Portfolio found in Trash'), 
-    'parent_item_colon' => '',
-    'menu_name' => 'Portfolio'
-  );
-  $args = array(
-	'labels' => $labels,
-    'public' => true,
-    'publicly_queryable' => true,
-    'show_ui' => true, 
-    'show_in_menu' => true, 
-    'query_var' => true,
-    'rewrite' => array( 'slug' => 'portfolio' ),
-    'capability_type' => 'post',
-    'has_archive' => false, 
-    'hierarchical' => false,
-    'menu_position' => 20,
-    'supports' => array('title','editor','custom-fields','thumbnail'),
-	//'taxonomies' => array('post_tag', 'categories') 
+//    $labels = array(
+// 	'name' => _x('Portfolio', 'post type general name'),
+//     'singular_name' => _x('Portfolio', 'post type singular name'),
+//     'add_new' => _x('Add New', 'Portfolio'),
+//     'add_new_item' => __('Add New Portfolio'),
+//     'edit_item' => __('Edit Portfolio'),
+//     'new_item' => __('New Portfolio'),
+//     'view_item' => __('View Portfolio'),
+//     'search_items' => __('Search Portfolio'),
+//     'not_found' =>  __('No Portfolio found'),
+//     'not_found_in_trash' => __('No Portfolio found in Trash'), 
+//     'parent_item_colon' => '',
+//     'menu_name' => 'Portfolio'
+//   );
+//   $args = array(
+// 	'labels' => $labels,
+//     'public' => true,
+//     'publicly_queryable' => true,
+//     'show_ui' => true, 
+//     'show_in_menu' => true, 
+//     'query_var' => true,
+//     'rewrite' => array( 'slug' => 'portfolio' ),
+//     'capability_type' => 'post',
+//     'has_archive' => false, 
+//     'hierarchical' => false,
+//     'menu_position' => 20,
+//     'supports' => array('title','editor','custom-fields','thumbnail'),
+// 	//'taxonomies' => array('post_tag', 'categories') 
 	
-  ); 
-  register_post_type('portfolio',$args);
+//   ); 
+//   register_post_type('portfolio',$args);
   
   
   
-    // Services ... 
+//     // Services ... 
   
-   $labels = array(
-	'name' => _x('Services', 'post type general name'),
-    'singular_name' => _x('Service', 'post type singular name'),
-    'add_new' => _x('Add New', 'Service'),
-    'add_new_item' => __('Add New Service'),
-    'edit_item' => __('Edit Service'),
-    'new_item' => __('New Service'),
-    'view_item' => __('View Service'),
-    'search_items' => __('Search Services'),
-    'not_found' =>  __('No Services found'),
-    'not_found_in_trash' => __('No Services found in Trash'), 
-    'parent_item_colon' => '',
-    'menu_name' => 'Services'
-  );
-  $args = array(
-	'labels' => $labels,
-    'public' => true,
-    'publicly_queryable' => true,
-    'show_ui' => true, 
-    'show_in_menu' => true, 
-    'query_var' => true,
-    'rewrite' => array( 'slug' => 'portfolio-item' ),
-    'capability_type' => 'post',
-    'has_archive' => false, 
-    'hierarchical' => false,
-    'menu_position' => 20,
-    'supports' => array('title','editor','custom-fields','thumbnail'),
-	//'taxonomies' => array('post_tag', 'categories') 
+//    $labels = array(
+// 	'name' => _x('Services', 'post type general name'),
+//     'singular_name' => _x('Service', 'post type singular name'),
+//     'add_new' => _x('Add New', 'Service'),
+//     'add_new_item' => __('Add New Service'),
+//     'edit_item' => __('Edit Service'),
+//     'new_item' => __('New Service'),
+//     'view_item' => __('View Service'),
+//     'search_items' => __('Search Services'),
+//     'not_found' =>  __('No Services found'),
+//     'not_found_in_trash' => __('No Services found in Trash'), 
+//     'parent_item_colon' => '',
+//     'menu_name' => 'Services'
+//   );
+//   $args = array(
+// 	'labels' => $labels,
+//     'public' => true,
+//     'publicly_queryable' => true,
+//     'show_ui' => true, 
+//     'show_in_menu' => true, 
+//     'query_var' => true,
+//     'rewrite' => array( 'slug' => 'portfolio-item' ),
+//     'capability_type' => 'post',
+//     'has_archive' => false, 
+//     'hierarchical' => false,
+//     'menu_position' => 20,
+//     'supports' => array('title','editor','custom-fields','thumbnail'),
+// 	//'taxonomies' => array('post_tag', 'categories') 
 	
-  ); 
-  register_post_type('services',$args);
+//   ); 
+//   register_post_type('services',$args);
   
-  // People ... 
+//   // People ... 
   
-   $labels = array(
-	'name' => _x('People', 'post type general name'),
-    'singular_name' => _x('People', 'post type singular name'),
-    'add_new' => _x('Add New', 'People'),
-    'add_new_item' => __('Add New People'),
-    'edit_item' => __('Edit People'),
-    'new_item' => __('New People'),
-    'view_item' => __('View People'),
-    'search_items' => __('Search People'),
-    'not_found' =>  __('No People found'),
-    'not_found_in_trash' => __('No People found in Trash'), 
-    'parent_item_colon' => '',
-    'menu_name' => 'People'
-  );
-  $args = array(
-	'labels' => $labels,
-    'public' => true,
-    'publicly_queryable' => true,
-    'show_ui' => true, 
-    'show_in_menu' => true, 
-    'query_var' => true,
-    'rewrite' => array( 'slug' => 'people' ),
-    'capability_type' => 'post',
-    'has_archive' => false, 
-    'hierarchical' => false,
-    'menu_position' => 20,
-    'supports' => array('title','editor','custom-fields','thumbnail'),
-	//'taxonomies' => array('post_tag', 'categories') 
+//    $labels = array(
+// 	'name' => _x('People', 'post type general name'),
+//     'singular_name' => _x('People', 'post type singular name'),
+//     'add_new' => _x('Add New', 'People'),
+//     'add_new_item' => __('Add New People'),
+//     'edit_item' => __('Edit People'),
+//     'new_item' => __('New People'),
+//     'view_item' => __('View People'),
+//     'search_items' => __('Search People'),
+//     'not_found' =>  __('No People found'),
+//     'not_found_in_trash' => __('No People found in Trash'), 
+//     'parent_item_colon' => '',
+//     'menu_name' => 'People'
+//   );
+//   $args = array(
+// 	'labels' => $labels,
+//     'public' => true,
+//     'publicly_queryable' => true,
+//     'show_ui' => true, 
+//     'show_in_menu' => true, 
+//     'query_var' => true,
+//     'rewrite' => array( 'slug' => 'people' ),
+//     'capability_type' => 'post',
+//     'has_archive' => false, 
+//     'hierarchical' => false,
+//     'menu_position' => 20,
+//     'supports' => array('title','editor','custom-fields','thumbnail'),
+// 	//'taxonomies' => array('post_tag', 'categories') 
 	
-  ); 
-  register_post_type('people',$args);
+//   ); 
+//   register_post_type('people',$args);
  
- } // end build Custom Post Types
+//  } // end build Custom Post Types
  
  
 /* ==========================

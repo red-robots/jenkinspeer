@@ -47,6 +47,7 @@ jQuery(document).ready(function ($) {
 	    }
 	});
 
+
 	/* Slick Carousel */
 	$('.swipe-projects').slick({
 	  dots: true,
@@ -57,5 +58,38 @@ jQuery(document).ready(function ($) {
 	  variableWidth: true
 	});
 
+	/* Portfolio Filter */
+	if( $("#portfolioFilter").length > 0 ) {
+		//var filter_params = '';
+		var currentURL = $("#portfolioFilter").attr("data-currentURL");
+		$("#portfolioFilter select").on("change",function(){
+			$(".spinnerDiv").addClass("show");
+			$("#filterBtn").submit();
+		});
+
+		$("#filterBtn").on("submit",function(e){
+			e.preventDefault();
+			var filter_params = '';
+			$("#portfolioFilter select").each(function(k){
+				var name = $(this).attr("name");
+				var and = (k>0) ? '&':'?';
+				var selected = $(this).find("option:selected").val();
+				filter_params += and + name + "="+ selected;
+			});
+			var url = currentURL+filter_params;
+			$("#filterResult").load(url + ' #filterContent',function(){
+			});
+		});
+
+	}
+
+
+	$('.select-style').select2({
+		minimumResultsForSearch: -1,
+		selectOnClose: true
+	});
+
 
 }); 
+
+
