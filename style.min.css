@@ -2045,6 +2045,7 @@ body{font-size:15px;line-height:1.5}
 @media(min-width:600px){.accolades-page .accolades .imagebox .caption .inner{font-size:1.2vw}
 }@media(min-width:1200px){.accolades-page .accolades .imagebox .caption .inner{font-size:14px}
 }.accolades-page .accolades .imagebox .caption p{margin:12px 0}
+.accolades-page .accolades .imagebox .caption h5{margin-top:0;position:relative;top:-3px}
 .accolades-page .accolades .imagebox .caption .title2{font-size:18px;font-weight:500;line-height:1.2;margin:0 0 10px}
 @media(min-width:600px){.accolades-page .accolades .imagebox .caption .title2{font-size:1.5vw}
 }@media(min-width:900px){.accolades-page .accolades .imagebox .caption .title2{font-size:1.8vw}
