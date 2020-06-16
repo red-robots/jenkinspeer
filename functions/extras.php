@@ -177,3 +177,23 @@ function _search_item_by_status($status,$post_type) {
 	return ($posts) ? $posts : '';
 }
 
+function custom_action_admin_head() { 
+  $pageId = ( isset($_GET['post']) && $_GET['post'] ) ? $_GET['post'] : '';
+  $post = get_post($pageId);
+  $slug = ( isset($post->post_name) && $ppost->post_name ) ? $ppost->post_name : '';
+  if($slug=='awards' || 'accolades') { ?>
+  <style type="text/css">
+  	.acf-gallery-side-data tr[data-name="caption"],
+  	.acf-gallery-side-data tr[data-name="alt"],
+  	.acf-gallery-side-data tr[data-name="description"] {
+		display: none!important;
+  	}
+  </style>
+  <?php }
+}; 
+add_action( 'admin_head', 'custom_action_admin_head'); 
+
+
+
+
+

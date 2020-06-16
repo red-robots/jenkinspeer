@@ -1,76 +1,140 @@
-<?php
-/**
- * The Template for displaying all single posts
- *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+<div id="primary" class="site-full-content team-single-page">
+	<div id="content" role="main">
+		<?php while ( have_posts() ) : the_post(); 
+    $image = get_field('photo'); 
+    $degrees = get_field('degrees');
+    $company_title = get_field('company_title');
+    $vcard = get_field('v_card');
+    $placeholder = get_bloginfo("template_url") . "/images/square.png";
+    $project_involvement = get_field('project_involvement');
 
-	<div id="primary" class="site-content">
-		<div id="content" role="main">
+    ?>
+    
+    <div class="team-info-wrapper <?php echo ($project_involvement) ? 'half':'full'; ?>">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+      <?php if ($image || $degrees) { ?>
+      <div class="col1 team-photo">
+        <div class="photo <?php echo ($image) ? 'has-image':'no-image'?>">
+        <?php if ($image) { ?>
+          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" title="<?php echo $image['title']; ?>" />
+        <?php } else { ?>
+          <img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder">
+        <?php } ?>
+        </div>
 
-			
-            	
-          <h1 class="page-title">People</h1>
-          
-          <div class="left-cont-pad">
-           <div class="entry-content">     
-     <?php 
-        // Get field Name
-        $image = get_field('photo'); 
-        $url = $image['url'];
-        $title = $image['title'];
-        $alt = $image['alt'];
-        $caption = $image['caption'];
-     
-        // size or custom size that will go
-        // into the "thumb" variable.
-        $size = 'large';
-        $thumb = $image['sizes'][ $size ];
-        $width = $image['sizes'][ $size . '-width' ];
-        $height = $image['sizes'][ $size . '-height' ];
-        ?>
+        <?php if ($degrees) { ?>
+        <div class="degrees-info">
+          <?php foreach($degrees as $d) { ?>
+          <div class="degree">
+            <div class="degree-name"><?php echo $d['degree_name']; ?></div>
+            <div class="degree-place"><?php echo $d['place_earned']; ?></div>
+          </div>
+          <?php } ?>
+        </div> 
+        <?php } ?>
+      </div> 
+      <?php } ?>
+
+      <div class="col2 team-details">
+        <div class="info-header">
+          <h2 class="personName"><?php echo get_the_title(); ?></h2>
+          <?php if ($company_title) { ?>
+          <div class="company-title"><?php echo $company_title ?></div> 
+          <?php } ?>
+        </div>
+    
+        <?php if ($vcard) { ?>
+        <div class="vcard"><a href="<?php echo $vcard; ?>">Vcard</a></div> 
+        <?php } ?>
         
-        <div class="person-photo">
-       		 <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" title="<?php echo $title; ?>" />
-        </div><!--person photo -->
-        
-        <div class="person-details">
-        <h2 class="persontitle redsubtitle" ><?php the_title(); ?></h2>
-       		 <div class="company-title"><?php the_field('company_title'); ?></div>
-             <?php if( have_rows('degrees') ): ?>
-			<?php while ( have_rows('degrees') ) : ?>
-				<?php the_row(); ?>
-					 <div class="degree-name"><?php the_sub_field('degree_name'); ?></div><!-- degree name -->
-                    <div class="degree-place"><?php the_sub_field('place_earned'); ?></div><!-- degree place -->
-	 		<?php endwhile; ?>
-		<?php endif; ?>
-        <?php if(get_field('v_card')!="") : ?>
-       		 <div class="vcard"><a href="<?php the_field('v_card'); ?>">Vcard</a></div>
-        <?php endif; ?>
-        </div><!-- person details -->
-        
-        <div class="clear"></div>
-        
+
         <div class="person-summary">
-        	<?php the_field('personal_details'); ?>
+          <?php the_field('personal_details'); ?>
         </div><!-- person summary -->
-                
-        
-                
-                
-            </div><!-- entry content -->
-            </div><!-- left cont pad -->
 
-			<?php endwhile; // end of the loop. ?>
+      </div>
+  
+    </div>
+    
+    <?php if ($project_involvement) { ?>
+    <div class="team-sidebar">
+      <h3 class="sbtitle">Project Involvement</h3>
+      <div id="projectsList" class="projects">
+        <?php 
+          $max = 5;
+          $count = count($project_involvement);
+          $lastPg = ceil($count/$max);
+          if($count>$max) {
+            $projectGroup = array_chunk($project_involvement,$max);
+          } else {
+            $projectGroup[] = $project_involvement;
+          }
 
-		</div><!-- #content -->
-	</div><!-- #primary -->
+          $n=1; foreach($projectGroup as $objects) { $isActive = ($n==1) ? ' show':''; ?>
+          <div class="project-group group<?php echo $n ?><?php echo $isActive ?>" data-group="<?php echo $n ?>">
+            
+            <?php $i=1; foreach ($objects as $p) {
+            $pid = $p->ID;
+            $projectName = $p->post_title;
+            $link = get_permalink($pid);
+            $thumbid = get_post_thumbnail_id($pid); 
+            $img = wp_get_attachment_image_src($thumbid,'medium');
+            $rectangle = get_bloginfo("template_url") . "/images/rectangle.png";
+            $style = ($img) ? ' style="background-image:url('.$img[0].')"':'';
+            ?>
 
-<?php get_sidebar('firm'); ?>
+            <a href="<?php echo $link ?>" class="proj <?php echo ($img) ? 'hasImage':'noImage'; ?>">
+              <span class="image"<?php echo $style ?>><img src="<?php echo $rectangle ?>" alt="" aria-hidden="true"></span>
+              <span class="title"><span><?php echo $projectName ?></span></span>
+            </a>  
+            <?php $i++; } ?>
+
+          </div>
+          <?php $n++; } ?>
+      </div>
+      <?php if ($count>$max) { ?>
+      <div class="seemore"><a id="seeMoreBtn" data-lastgroup="<?php echo $lastPg ?>">See More</a></div>
+      <?php } ?>
+    </div>
+    <?php } ?>
+
+
+		<?php endwhile; // end of the loop. ?>
+	</div><!-- #content -->
+</div><!-- #primary -->
+
+<script>
+jQuery(document).ready(function($){
+  
+  add_sidebar_height();
+  $(window).resize(function() {
+    add_sidebar_height();
+  });
+
+  function add_sidebar_height() {
+    var projectHeight = $("#projectsList .group1").height();
+    $("#projectsList").css({
+      'height':projectHeight+'px',
+      'overflow':'auto'
+    });
+  }
+
+  $("#seeMoreBtn").on("click",function(e){
+    e.preventDefault();
+    var moreBtn = $(this);
+    var lastgroup = $(this).attr("data-lastgroup");
+    var last = $(".project-group.show").last().attr("data-group");
+    var next = parseInt(last) + 1;
+    $(".project-group.show").last().next().addClass('show');
+    $("#projectsList").animate({ scrollTop: $("#projectsList")[0].scrollHeight}, 1000);
+    if(lastgroup==next) {
+      $("div.seemore").remove();
+    } 
+    
+  });
+});
+</script>
+
 <?php get_footer(); ?>

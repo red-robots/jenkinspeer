@@ -735,6 +735,278 @@ body.subpage {
 	}
 }
 
+/* Single People */
+.team-single-page {
+	width: 100%;
+	float: left;
+	padding-top: 40px;
+	padding-bottom: 80px;
+	.team-info-wrapper {
+		width: 100%;
+		float: left;
+		margin-bottom: 20px;
+		&.half {
+			width: 100%;
+			@include tab {
+				width: 68%;
+				margin-bottom: 0;
+			}
+			@include mid {
+				width: 74%;
+				margin-bottom: 0;
+			}
+		}
+		
+		.col1 {
+			width: 100%;
+			float: left;
+			margin-bottom: 20px;
+			@include tab {
+				width: 30%;
+				margin-bottom: 0;
+			}
+		}
+		.col2 {
+			width: 100%;
+			float: left;
+			@include tab {
+				width: 70%;
+				float: right;
+				padding-left: 3vw;
+			}
+			@include desk {
+				padding-left: 40px;
+			}
+		}
+	}
+	.info-header {
+		margin-bottom: 20px;
+	}
+	.team-photo {
+		margin-top: 5px;
+		.photo {
+			width: 100%;
+			float: left;
+			background-color: #e4e4e4;
+			margin-bottom: 20px;
+			position: relative;
+			&.no-image {
+				&:before {
+					content:"Photo Not Available";
+					display: block;
+					width: 100%;
+					text-align: center;
+					position: absolute;
+					top: 50%;
+					left: 0;
+					transform: translateY(-50%);
+					text-transform: uppercase;
+				    font-size: 12px;
+				    font-weight: 600;
+				    letter-spacing: 1px;
+				    color: #a9a7a7;
+				}
+			}
+		}
+		img {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+	}
+	.degrees-info {
+		width: 100%;
+		float: left;
+	}
+	.personName {
+		font-family: $font-serif;
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 1.2;
+		color: $primary;
+		margin: 0 0;
+	}
+	.company-title {
+		font-family: $font-serif;
+		font-style: normal;
+		font-size: 16px;
+		margin: 0 0;
+	}
+	.vcard {
+		margin-bottom: 20px;
+	}
+	.degree-name,
+	.degree-place {
+		line-height: 1.2;
+	}
+	.degree-name {
+		font-size: 15px;
+		color: $primary;
+	}
+	.degree-place {
+		font-size: 14px;
+	}
+	.person-summary {
+		ul {
+			margin: 0 0 20px 15px;
+			padding: 0 0;
+			list-style: none;
+		}
+		ul li {
+			position: relative;
+			padding-left: 12px;
+			&:before {
+				content:"";
+				display: block;
+				width: 4px;
+				height: 4px;
+				background: $primary;
+				border-radius: 100px;
+				position: absolute;
+				top: 7px;
+				left: 0;
+			}
+		}
+	}
+	.team-sidebar {
+		width: 100%;
+		float: left;
+		@include tab {
+			width: 28%;
+			float: right;
+		}
+		@include mid {
+			width: 22%;
+			float: right;
+		}
+		.sbtitle {
+			background: $primary;
+			color: #FFF;
+			margin: 0 15px 0 0;
+			font-size: 16px;
+			line-height: 1.2;
+			padding: 10px 15px;
+		}
+	}
+	.projects {
+		padding-right: 15px;
+		.proj {
+			display: block;
+			width: 100%;
+			float: left;
+			position: relative;
+			text-decoration: none;
+			transition: all ease .3s;
+			margin: 2px 0;
+		}
+		.title {
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			color: #FFF;
+			background: rgba($primary,0.8);
+			transition: all ease .3s;
+			opacity: 0;
+			@include flexgroup-center();
+			span {
+				display: block;
+				width: 100%;
+				text-align: center;
+				font-size: 18px;
+				line-height: 1.2;
+				padding: 15px;
+				transform: translateY(50px);
+				transition: all ease .3s;
+				@include xs {
+					font-size: 3.3vw;
+				}
+				@include tab {
+					font-size: 0.85rem;
+				}
+				@include desk {
+					font-size: 1rem;
+				}
+			}
+		}
+		.image {
+			display: block;
+			width: 100%;
+			float: left;
+			position: relative;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-color: #e4e4e4;
+			img {
+				width: 100%;
+				height: auto;
+				float: left;
+			}
+		}
+		.noImage .image {
+			&:before {
+				content:"Photo Not Available";
+				display: block;
+				width: 100%;
+				text-align: center;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+				text-transform: uppercase;
+			    font-size: 12px;
+			    font-weight: 600;
+			    letter-spacing: 1px;
+			    color: #a9a7a7;
+			}
+		}
+		.proj:hover {
+			.title {
+				opacity: 1;
+				span {
+					transform: translateY(0);
+				}
+			}
+		}
+	}
+	.projects {
+		width: 100%;
+		float: left;
+	}
+	.project-group {
+		display: none;
+		width: 100%;
+		float: left;
+		-webkit-animation-duration: 1s;
+		animation-duration: 1s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+		&.show {
+			display: block;
+			-webkit-animation-name: fadeIn;
+			animation-name: fadeIn;
+		}
+	}
+	.seemore {
+		width: 100%;
+		float: left;
+		text-align: center;
+		margin-top: 6px;
+		a {
+			display: inline-block;
+			text-decoration: underline;
+			color: $primary;
+			cursor: pointer;
+			&:hover {
+				color: tint($primary,50%);
+			}
+		}
+	}
+}
+
 /* Footer  */
 .siteby {
 	font-family: 'Roboto Condensed', sans-serif;
