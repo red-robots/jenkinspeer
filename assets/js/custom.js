@@ -11,6 +11,8 @@ jQuery(document).ready(function ($) {
 		$("#site-navigation").toggleClass('menu-open');
 	});
 
+	new WOW().init();
+
 	/*
 	*
 	*	Smooth Scroll to Anchor
