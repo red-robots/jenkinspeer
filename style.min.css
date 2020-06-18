@@ -2028,6 +2028,10 @@ body{font-size:15px;line-height:1.5}
 .team-single-page .seemore{width:100%;float:left;text-align:center;margin-top:5px;position:relative;top:-10px;z-index:15}
 .team-single-page .seemore a{display:inline-block;text-decoration:underline;color:#da291c;cursor:pointer}
 .team-single-page .seemore a:hover{color:#ed948e}
+.left-cont-pad .entry-content{padding-bottom:50px}
+.left-cont-pad .entry-content h2{font-family:"Noto Serif TC",serif;font-weight:400;font-size:25px;line-height:1.6;margin:40px 0 10px}
+.left-cont-pad .entry-content h2 .short-descr{color:#666;font-family:"Noto Serif TC",serif;font-weight:400;font-size:25px;font-style:normal;border-bottom:0;padding:0;margin:0}
+.left-cont-pad .entry-content .service h2.redsubtitle{margin-top:10px}
 .accolades-page{width:100%;float:left;position:relative}
 .accolades-page .entry-content{background:#eaeaea;padding:30px;margin:20px 0}
 .accolades-page .entry-content p:last-child{margin-bottom:0}
@@ -2085,7 +2089,7 @@ footer[role="contentinfo"] a:hover{color:#21759b}
 #sociallinks ul{margin:0;padding:0;list-style-type:none;z-index:2;position:relative}
 #sociallinks ul li{display:inline-block;margin:0 0 0 5px}
 #sociallinks ul a{text-decoration:none;display:block;height:30px;position:relative;width:30px;font-size:28px;text-align:center}
-.service{width:100%;float:left;margin:0 0 30px 0;overflow:hidden}
+.service{width:100%;float:left;margin:0 0 20px 0;overflow:hidden}
 h2.redsubtitle{color:#da291c}
 h1.news-title{color:#da291c;text-transform:uppercase;margin:10px 0 20px 10px}
 .newpush{margin:0 0 0 10px}

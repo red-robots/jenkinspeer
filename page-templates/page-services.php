@@ -65,8 +65,8 @@ get_header(); ?>
     
     <div class="service">
     	<a name="<?php echo $santigold; ?>"></a>
-        <h2 class="redsubtitle"><?php echo $posttitle; ?></h2>
-        <div class="short-descr"><?php the_field('service_short_description'); ?></div>
+        <?php $title2 = get_field('service_short_description'); ?>
+        <h2 class="redsubtitle"><?php echo $posttitle; ?><?php if ($title2) { ?><span class="short-descr"> &ndash; <?php the_field('service_short_description'); ?></span><?php } ?></h2>
         <div class="service-right <?php //echo $widthClass ?>">
         	<div class="service-description">
             <?php if(get_field('featured_image')!="" ) : ?>
@@ -74,7 +74,12 @@ get_header(); ?>
                 <img src="<?php echo $thumb; ?>" alt="<?php echo $alt; ?>" title="<?php echo $title; ?>" />
             </div><!-- service imgage -->
        		 <?php endif; ?>
-			<?php the_field('description'); ?>
+
+            <?php 
+            $description = get_field("description");
+            $description = ($description) ? preg_replace('#<p>(\s|&nbsp;)*+(<br\s*/*>)?(\s|&nbsp;)*</p>#i','',$description) : '';
+            ?>
+			<?php echo $description; ?>
             </div><!-- service description -->
         </div><!-- service-right -->
         
