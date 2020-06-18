@@ -115,9 +115,11 @@ jQuery(document).ready(function($){
 
   function add_sidebar_height() {
     var projectHeight = $("#projectsList .group1").height();
+    var divHeight = projectHeight + 10;
     $("#projectsList").css({
-      'height':projectHeight+'px',
-      'overflow':'auto'
+      'height':divHeight+'px',
+      'overflow-x':'hidden',
+      'overflow-y':'auto'
     });
   }
 

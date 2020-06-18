@@ -871,6 +871,7 @@ body.subpage {
 	.team-sidebar {
 		width: 100%;
 		float: left;
+		position: relative;
 		@include tab {
 			width: 28%;
 			float: right;
@@ -878,6 +879,7 @@ body.subpage {
 		@include mid {
 			width: 22%;
 			float: right;
+			right: -15px;
 		}
 		.sbtitle {
 			background: $primary;
@@ -898,6 +900,7 @@ body.subpage {
 			text-decoration: none;
 			transition: all ease .3s;
 			margin: 2px 0;
+			overflow: hidden;
 		}
 		.title {
 			display: block;
