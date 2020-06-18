@@ -997,7 +997,10 @@ body.subpage {
 		width: 100%;
 		float: left;
 		text-align: center;
-		margin-top: 6px;
+		margin-top: 5px;
+		position: relative;
+		top: -10px;
+		z-index: 15;
 		a {
 			display: inline-block;
 			text-decoration: underline;

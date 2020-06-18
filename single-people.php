@@ -86,7 +86,7 @@
             ?>
 
             <a href="<?php echo $link ?>" class="proj <?php echo ($img) ? 'hasImage':'noImage'; ?>">
-              <span class="image"<?php echo $style ?>><img src="<?php echo $rectangle ?>" alt="" aria-hidden="true"></span>
+              <span class="image"<?php echo $style ?>><img src="<?php echo $rectangle ?>" class="projplaceholder" alt="" aria-hidden="true"></span>
               <span class="title"><span><?php echo $projectName ?></span></span>
             </a>  
             <?php $i++; } ?>
@@ -114,8 +114,15 @@ jQuery(document).ready(function($){
   });
 
   function add_sidebar_height() {
-    var projectHeight = $("#projectsList .group1").height();
-    var divHeight = projectHeight + 10;
+    //var projectHeight = $("#projectsList .group1").height();
+    //var divHeight = projectHeight + 10;
+    var divHeight = 0;
+    $(".projplaceholder").each(function(){
+      var h = $(this).height() + 4;
+      divHeight += h;
+    });
+    divHeight = divHeight+5;
+
     $("#projectsList").css({
       'height':divHeight+'px',
       'overflow-x':'hidden',

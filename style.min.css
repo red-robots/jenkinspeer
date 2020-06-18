@@ -2025,7 +2025,7 @@ body{font-size:15px;line-height:1.5}
 .team-single-page .projects{width:100%;float:left}
 .team-single-page .project-group{display:none;width:100%;float:left;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}
 .team-single-page .project-group.show{display:block;-webkit-animation-name:fadeIn;animation-name:fadeIn}
-.team-single-page .seemore{width:100%;float:left;text-align:center;margin-top:6px}
+.team-single-page .seemore{width:100%;float:left;text-align:center;margin-top:5px;position:relative;top:-10px;z-index:15}
 .team-single-page .seemore a{display:inline-block;text-decoration:underline;color:#da291c;cursor:pointer}
 .team-single-page .seemore a:hover{color:#ed948e}
 .accolades-page{width:100%;float:left;position:relative}
