@@ -1081,6 +1081,7 @@ body.subpage {
 				transition: all ease .3s;
 				opacity: 0;
 				.inner {
+					width: 100%;
 					padding: 15px;
 					color: $color__text-main;
 					font-size: 14px;
