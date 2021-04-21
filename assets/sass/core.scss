@@ -4902,12 +4902,14 @@ body.single-portfolio .page-container {
 	padding-right: 30px;
 	margin-bottom: 20px;
 	margin-top: 15px;
+	text-align: center;
 	form {
-		display: block;
 		max-width: 1000px;
 		width: 100%;
 		margin: 0 auto;
 		position: relative;
+		@include flexgroup();
+		@include flexbox-justify(center);
 		input[type="submit"] {
 			position: absolute;
 			top: 0;
@@ -4921,6 +4923,7 @@ body.single-portfolio .page-container {
 		float: left;
 		padding-left: 10px;
 		padding-right: 10px;
+		text-align: left;
 		select {
 			width: 100%;
 			height: 40px;

@@ -56,7 +56,7 @@ if($count_filter>1) {
 $service_selected = ( isset($_GET['service']) && $_GET['service'] ) ? $_GET['service'] : 'all';
 $category_selected = ( isset($_GET['category']) && $_GET['category'] ) ? $_GET['category'] : 'all';
 $status_selected = ( isset($_GET['status']) && $_GET['status'] ) ? $_GET['status'] : 'all';
-
+$status_choices = FALSE;
 ?>
 
 

@@ -38,7 +38,7 @@ function js_custom_init() {
             $taxonomies = ( isset($p['taxonomies']) && $p['taxonomies'] ) ? $p['taxonomies'] : array(); 
             $parent_item_colon = ( isset($p['parent_item_colon']) && $p['parent_item_colon'] ) ? $p['parent_item_colon'] : ""; 
             $menu_position = ( isset($p['menu_position']) && $p['menu_position'] ) ? $p['menu_position'] : 20; 
-            $rewrite_slug = ( isset($p['slug']) && $p['slug'] ) ? $p['slug'] : array( 'slug' => $taxonomy );
+            
             
             if($p_type) {
                 
