@@ -910,7 +910,7 @@ body.subpage {
 			top: 0;
 			left: 0;
 			color: #FFF;
-			background: rgba($primary,0.8);
+			background: rgba(0,0,0,.75);
 			transition: all ease .3s;
 			opacity: 0;
 			@include flexgroup-center();
@@ -4712,7 +4712,7 @@ body.single-portfolio .page-container {
 				transition: all ease .3s;
 			}
 			&:hover {
-				border-color: #9c9c9c;
+				border-color: $color-red;
 				box-shadow: 0 0 8px rgba(0,0,0,0.35);
 			}
 		}
