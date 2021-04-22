@@ -2711,7 +2711,7 @@ body.single-portfolio .page-container .content-wrapper{padding-top:50px}
 }@media(min-width:900px){.people-page .teamInfo{width:25%}
 }.people-page .teamInfo .info{display:block;width:100%;float:left;text-decoration:none;position:relative;border:2px solid #FFF;overflow:hidden}
 .people-page .teamInfo .info *{-webkit-transition:all ease .3s;transition:all ease .3s}
-.people-page .teamInfo .info:hover{border-color:#da291c;box-shadow:0 0 8px rgba(0,0,0,0.35)}
+.people-page .teamInfo .info:hover{border-color:#9c9c9c;box-shadow:0 0 8px rgba(0,0,0,0.35)}
 .people-page .teamInfo .photo{display:block;width:100%;float:left;background-size:cover;background-position:center;background-repeat:no-repeat;background-color:#CCC}
 .people-page .teamInfo .photo img{width:100%;height:auto;float:left}
 .people-page .teamInfo .text{display:block;width:100%;position:absolute;left:0;bottom:0;z-index:10;color:#FFF;padding:0 15px 10px;font-size:13px;line-height:1.1}
