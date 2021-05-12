@@ -40,7 +40,7 @@ if($categories) { ?>
 				<a href="<?php echo get_site_url(); ?>">
 					<span class="imagebg" style="background-image:url('<?php echo get_bloginfo('template_url');?>/images/JPA-initials.jpg');"></span>
 					<img src="<?php echo get_bloginfo('template_url');?>/images/JPA-initials.jpg" alt="<?php echo get_bloginfo('name'); ?>" />
-				</a>
+				</a><!-- new logo -->
 			</div>
 		</div>	
 	</div>
