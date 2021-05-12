@@ -61,9 +61,15 @@ $status_choices = FALSE;
 
 
 
-<?php if ($defaultPosts) { ?>
+<?php if ($defaultPosts) { 
+  $pId = get_the_permalink();
+  // echo '<pre>';
+  //             print_r($pId);
+  //             echo '</pre>';
+
+  ?>
 <div class="postsFiterWrap">
-   <form action="<?php echo get_permalink(); ?>" method="get" id="portfolioFilter" data-currentURL="<?php echo get_permalink(); ?>">
+   <form action="<?php echo get_the_permalink( ); ?>" method="get" id="portfolioFilter" data-currentURL="<?php echo get_the_permalink( ); ?>">
        <?php if ($services_options) { ?>
        <div class="selectStyleWrap">
            <select name="service" class="select-style">
@@ -117,10 +123,13 @@ $status_choices = FALSE;
               $taxonomy = 'portcats';
               $term = get_the_terms($post_id,$taxonomy);
               $term_id = ( isset($term->term_id) && $term->term_id ) ?  $term->term_id: 0;
-              $pagelink = get_permalink();
+              $pagelink = get_the_permalink( $post_id );
               $imgSrc = wp_get_attachment_image_src($post_thumbnail_id,'thumbnail_large');
               $img_url = ($imgSrc) ? $imgSrc[0] : get_bloginfo('template_url') . '/images/default-thumb.png';
               $post_edit_link = get_edit_post_link($post_id);
+              // echo '<pre>';
+              // print_r($pagelink);
+              // echo '</pre>';
               ?>
               <div id="proj-<?php echo $post_id?>" class="flexcol">
                   <div class="inside clear">
