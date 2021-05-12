@@ -38,8 +38,8 @@ if($categories) { ?>
 		<div class="portcat flexcol sitelogo">
 			<div class="inside clear">
 				<a href="<?php echo get_site_url(); ?>">
-					<span class="imagebg" style="background-image:url('<?php echo get_bloginfo('template_url');?>/images/jpa-logo-2.jpg');"></span>
-					<img src="<?php echo get_bloginfo('template_url');?>/images/jpa-logo-2.jpg" alt="<?php echo get_bloginfo('name'); ?>" />
+					<span class="imagebg" style="background-image:url('<?php echo get_bloginfo('template_url');?>/images/JPA-initials.jpg');"></span>
+					<img src="<?php echo get_bloginfo('template_url');?>/images/JPA-initials.jpg" alt="<?php echo get_bloginfo('name'); ?>" />
 				</a>
 			</div>
 		</div>	
