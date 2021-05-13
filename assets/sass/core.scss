@@ -5058,5 +5058,12 @@ body.single-portfolio .page-container {
 	}
 }
 
-
+.facetwp-facet {
+	width: auto;
+	display: inline-block;
+	margin: 0 10px;
+	select.facetwp-dropdown {
+		padding: 10px;
+	}
+}
 

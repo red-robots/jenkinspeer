@@ -69,8 +69,8 @@
 	 ?>
 
 <div class="postsFiterWrap">
-   <?php //echo do_shortcode('[facetwp facet="project_type"]'); ?>
-   <?php //echo do_shortcode('[facetwp facet="portfolio_services"]'); ?>
+   <?php echo do_shortcode('[facetwp facet="project_type"]'); ?>
+   <?php echo do_shortcode('[facetwp facet="portfolio_services"]'); ?>
 </div>
 
 
