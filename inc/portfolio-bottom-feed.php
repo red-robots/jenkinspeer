@@ -1,122 +1,90 @@
 <?php
-$status_choices = get_portfolio_statuses();
-$services_arg = array(
-        'post_type'=>'services',
-        'posts_per_page' => -1,
-        'orderby'   => 'title',
-        'order'     => 'ASC',
-    );
-$services_options = get_posts($services_arg);
+// $status_choices = get_portfolio_statuses();
+// $services_arg = array(
+//         'post_type'=>'services',
+//         'posts_per_page' => -1,
+//         'orderby'   => 'title',
+//         'order'     => 'ASC',
+//     );
+// $services_options = get_posts($services_arg);
 
-$taxonomy = 'portcats';
-$portfolio_categories = get_terms( array(
-    'taxonomy' => $taxonomy,
-    'post_types'=> array('portfolio'),
-    'hide_empty' => false,
-));
+// $taxonomy = 'portcats';
+// $portfolio_categories = get_terms( array(
+//     'taxonomy' => $taxonomy,
+//     'post_types'=> array('portfolio'),
+//     'hide_empty' => false,
+// ));
 
-$arg = array(
-        'post_type'=>'portfolio',
-        'posts_per_page' => -1,
-        'orderby'   => 'menu_order',
-        'order'     => 'ASC',
-    );
+// $arg = array(
+//         'post_type'=>'portfolio',
+//         'posts_per_page' => -1,
+//         'orderby'   => 'menu_order',
+//         'order'     => 'ASC',
+//     );
 
-$defaultPosts = get_posts($arg);
-$projects = $defaultPosts;
+// $defaultPosts = get_posts($arg);
+// $projects = $defaultPosts;
 
-$get_options = get_portfolio_params();
-$filter_args = array();
-if( isset($_GET) ) {
-   foreach( $_GET as $k=>$v ) {
-      if( in_array($k, $get_options) ) {
-         $filter_args[$k] = $v;
-      }
-   }
-}
+// $get_options = get_portfolio_params();
+// $filter_args = array();
+// if( isset($_GET) ) {
+//    foreach( $_GET as $k=>$v ) {
+//       if( in_array($k, $get_options) ) {
+//          $filter_args[$k] = $v;
+//       }
+//    }
+// }
 
-$result = get_portfolio_filter_result($filter_args);
-if($result) {
-   $projects = $result;
-}
+// $result = get_portfolio_filter_result($filter_args);
+// if($result) {
+//    $projects = $result;
+// }
 
-$count_filter = 0;
-if($filter_args) {
-   $unique = array_unique($filter_args);
-   $count_filter = ($unique) ? count($unique) : '';
-}
-if($count_filter>1) {
-   if(!$result) {
-      $projects = false;
-   }
-} else {
-   $projects = $defaultPosts;
-}
+// $count_filter = 0;
+// if($filter_args) {
+//    $unique = array_unique($filter_args);
+//    $count_filter = ($unique) ? count($unique) : '';
+// }
+// if($count_filter>1) {
+//    if(!$result) {
+//       $projects = false;
+//    }
+// } else {
+//    $projects = $defaultPosts;
+// }
 
-$service_selected = ( isset($_GET['service']) && $_GET['service'] ) ? $_GET['service'] : 'all';
-$category_selected = ( isset($_GET['category']) && $_GET['category'] ) ? $_GET['category'] : 'all';
-$status_selected = ( isset($_GET['status']) && $_GET['status'] ) ? $_GET['status'] : 'all';
-$status_choices = FALSE;
+// $service_selected = ( isset($_GET['service']) && $_GET['service'] ) ? $_GET['service'] : 'all';
+// $category_selected = ( isset($_GET['category']) && $_GET['category'] ) ? $_GET['category'] : 'all';
+// $status_selected = ( isset($_GET['status']) && $_GET['status'] ) ? $_GET['status'] : 'all';
+// $status_choices = FALSE;
 ?>
 
+<?php
+	$wp_query = new WP_Query();
+	$wp_query->query(array(
+	'post_type'=>'portfolio',
+	'posts_per_page' => -1,
+	'facetwp' => true,
+));
+	 ?>
 
-
-<?php if ($defaultPosts) { 
-  $pId = get_the_permalink();
-  // echo '<pre>';
-  //             print_r($pId);
-  //             echo '</pre>';
-
-  ?>
 <div class="postsFiterWrap">
-   <form action="<?php echo get_the_permalink( ); ?>" method="get" id="portfolioFilter" data-currentURL="<?php echo get_the_permalink( ); ?>">
-       <?php if ($services_options) { ?>
-       <div class="selectStyleWrap">
-           <select name="service" class="select-style">
-               <option value="all">All Services</option>
-               <?php foreach ($services_options as $s) {
-               $selected1 = ($service_selected==$s->ID) ? ' selected':'';  ?>
-               <option value="<?php echo $s->ID ?>"<?php echo $selected1 ?>><?php echo $s->post_title ?></option> 
-               <?php } ?>
-           </select>
-       </div>
-       <?php } ?>
-
-       <?php if ($portfolio_categories) { ?>
-       <div class="selectStyleWrap">
-           <select name="category" class="select-style">
-               <option value="all">All Project Types</option>
-               <?php foreach ($portfolio_categories as $c) { 
-               $selected2 = ($category_selected==$c->term_id) ? ' selected':'';  ?>
-               <option value="<?php echo $c->term_id ?>"<?php echo $selected2 ?>><?php echo $c->name ?></option> 
-               <?php } ?>
-           </select>
-       </div>
-       <?php } ?>
-
-       <?php if ($status_choices) { ?>
-       <div class="selectStyleWrap">
-           <select name="status" class="select-style">
-               <option value="all">All Statuses</option>
-               <?php foreach ($status_choices as $status=>$statusName) {
-               $selected3 = ($status_selected==$status) ? ' selected':'';  ?>
-               <option value="<?php echo $status ?>"<?php echo $selected3 ?>><?php echo $statusName ?></option> 
-               <?php } ?>
-           </select>
-       </div>
-       <?php } ?>
-       <input type="submit" value="Filter" id="filterBtn" style="display:none;">
-   </form>
+   <?php //echo do_shortcode('[facetwp facet="project_type"]'); ?>
+   <?php //echo do_shortcode('[facetwp facet="portfolio_services"]'); ?>
 </div>
-<?php } ?>
+
 
 <div id="filterResult">
    <div id="filterContent">
 
-   <?php if( $projects ) { ?>
+
+
+   <?php if ($wp_query->have_posts()) : ?>
       <div class="three-column-wrapper clear">
           <div class="flexrow clear">
-              <?php foreach($projects as $p) { 
+              <?php 
+              // foreach($projects as $p) { 
+              while ($wp_query->have_posts()) : $wp_query->the_post();
               $post_id = $p->ID;
               $title = $p->post_title;
               $post_thumbnail_id = get_post_thumbnail_id( $post_id );
@@ -151,15 +119,16 @@ $status_choices = FALSE;
                       <?php } ?>
                   </div>
               </div>
-              <?php }  wp_reset_postdata(); ?>
+              <?php endwhile;
+              //}  wp_reset_postdata(); ?>
           </div> 
       </div>
-   <?php } else { ?>
+   <?php else : ?>
 
    <div class="three-column-wrapper noResultFound clear">
       <h2 class="noresult">No record found.</h2>
    </div>
-<?php } ?>
+<?php endif; ?>
    </div>
    <div class="spinnerDiv red">
       <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>

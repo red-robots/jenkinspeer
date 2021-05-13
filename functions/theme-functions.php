@@ -243,7 +243,7 @@ function build_taxonomies() {
     register_taxonomy( 'portcats', 'portfolio',
 	 array( 
 	'hierarchical' => true, 
-	'label' => 'Categories', 
+	'label' => 'Portfolio Categories', 
 	'query_var' => true, 
 	'rewrite' => true ,
 	'public' => true,
@@ -251,11 +251,23 @@ function build_taxonomies() {
 	'show_admin_column' => true,
 	'_builtin' => true
     ) );    
+
+    register_taxonomy( 'service_type', 'portfolio',
+	 array( 
+	'hierarchical' => true, 
+	'label' => 'Service Type', 
+	'query_var' => true, 
+	'rewrite' => true ,
+	'public' => true,
+	'rewrite' => array( 'slug' => 'service-type' ),
+	'show_admin_column' => true,
+	'_builtin' => true
+    ) ); 
     
     register_taxonomy( 'people_categories', 'people',
          array( 
         'hierarchical' => true, 
-        'label' => 'Categories', 
+        'label' => 'People Categories', 
         'query_var' => true, 
         'rewrite' => true ,
         'public' => true,
