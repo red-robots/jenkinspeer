@@ -118,7 +118,7 @@ function twentytwelve_scripts_styles() {
 		'bellaworks-plugins', 
 		get_template_directory_uri() . '/assets/js/vendors.js', 
 		array(), '20120206', 
-		true 
+		false 
 	);
 
 	wp_enqueue_script( 

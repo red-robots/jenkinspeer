@@ -1,9 +1,17 @@
 jQuery(document).ready(function ($) {
 	
-	$('#featurePortfolio').flexslider({
+	// $('#featurePortfolio').flexslider({
+	// 	selector: '.slides > .slide-group',
+	// 	directionNav: false,
+	// 	controlsContainer: "#slide-controller",
+	// 	smoothHeight: true
+	// }); 
+
+	$('.flexslider').flexslider({
 		selector: '.slides > .slide-group',
 		directionNav: false,
-		controlsContainer: "#slide-controller"
+		controlsContainer: "#slide-controller",
+		// smoothHeight: true
 	}); 
 
 	$(document).on("click","#toggleMenu",function(){

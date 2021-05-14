@@ -4,15 +4,15 @@
 	if (!is_admin()) {
  
 		wp_deregister_script('jquery');
-		wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js', false, '1.8.3', true);
+		wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js', false, '3.5.1', false);
 		wp_enqueue_script('jquery');
 		
 		// other scripts...
-		wp_register_script(
-			'thumbslider',
-			get_bloginfo('template_directory') . '/js/jquery.easing.1.3.js',
-			array('jquery') );
-		wp_enqueue_script('thumbslider');
+		// wp_register_script(
+		// 	'thumbslider',
+		// 	get_bloginfo('template_directory') . '/js/jquery.easing.1.3.js',
+		// 	array('jquery') );
+		// wp_enqueue_script('thumbslider');
 		
 		
 		// other scripts...
@@ -24,71 +24,71 @@
 		
 	
 		// other scripts...
-		wp_register_script(
-			'projgalleryplus',
-			get_bloginfo('template_directory') . '/js/gallerificPlus.js',
-			array('jquery') );
-		wp_enqueue_script('projgalleryplus');
+		// wp_register_script(
+		// 	'projgalleryplus',
+		// 	get_bloginfo('template_directory') . '/js/gallerificPlus.js',
+		// 	array('jquery') );
+		// wp_enqueue_script('projgalleryplus');
 		
 		
 		// other scripts...
-		wp_register_script(
-			'history',
-			get_bloginfo('template_directory') . '/js/jquery.history.js',
-			array('jquery') );
-		wp_enqueue_script('history');
+		// wp_register_script(
+		// 	'history',
+		// 	get_bloginfo('template_directory') . '/js/jquery.history.js',
+		// 	array('jquery') );
+		// wp_enqueue_script('history');
 		
 		
 		 //other scripts...
-		wp_register_script(
-			'opacityrollover',
-			get_bloginfo('template_directory') . '/js/jquery.opacityrollover.js',
-			array('jquery') );
-		wp_enqueue_script('opacityrollover');
+		// wp_register_script(
+		// 	'opacityrollover',
+		// 	get_bloginfo('template_directory') . '/js/jquery.opacityrollover.js',
+		// 	array('jquery') );
+		// wp_enqueue_script('opacityrollover');
 		
 		
 		 //other scripts...
-		wp_register_script(
-			'jui',
-			get_bloginfo('template_directory') . '/js/jquery-ui.js',
-			array('jquery') );
-		wp_enqueue_script('jui');
+		// wp_register_script(
+		// 	'jui',
+		// 	get_bloginfo('template_directory') . '/js/jquery-ui.js',
+		// 	array('jquery') );
+		// wp_enqueue_script('jui');
 		
 		
 		
 		
 		// other scripts...
-		wp_register_script(
-			'carousel',
-			get_bloginfo('template_directory') . '/js/jquery.jcarousel.js',
-			array('jquery') );
-		wp_enqueue_script('carousel');
+		// wp_register_script(
+		// 	'carousel',
+		// 	get_bloginfo('template_directory') . '/js/jquery.jcarousel.js',
+		// 	array('jquery') );
+		// wp_enqueue_script('carousel');
 		
 		
 		
 		
 		
 		// other scripts...
-		wp_register_script(
-			'masonary',
-			get_bloginfo('template_directory') . '/js/isotope.js',
-			array('jquery') );
-		wp_enqueue_script('masonary');
+		// wp_register_script(
+		// 	'masonary',
+		// 	get_bloginfo('template_directory') . '/js/isotope.js',
+		// 	array('jquery') );
+		// wp_enqueue_script('masonary');
 
 
     // other scripts...
-    wp_register_script(
-      'imagesloaded',
-      get_bloginfo('template_directory') . '/js/images-loaded.js',
-      array('jquery') );
-    wp_enqueue_script('imagesloaded');
+    // wp_register_script(
+    //   'imagesloaded',
+    //   get_bloginfo('template_directory') . '/js/images-loaded.js',
+    //   array('jquery') );
+    // wp_enqueue_script('imagesloaded');
 
     // other scripts...
-    wp_register_script(
-      'custom',
-      get_bloginfo('template_directory') . '/js/custom.js',
-      array('jquery') );
-    wp_enqueue_script('custom');
+    // wp_register_script(
+    //   'custom',
+    //   get_bloginfo('template_directory') . '/js/custom.js',
+    //   array('jquery') );
+    // wp_enqueue_script('custom');
 		
 	}
 }
@@ -99,6 +99,7 @@ add_action('wp_enqueue_scripts', 'ineedmyjava');
 add_image_size( 'leadership', 150, 9999 ); //150 pixels wide (and unlimited height ... for the leadership page)
 add_image_size( 'lightbox', 800, 9999 ); //150 pixels wide (and unlimited height ... for the leadership page)
 add_image_size( 'home-thumbnail', 210, 210, true ); //
+add_image_size( 'home-slider', 1500, 656, true ); //
 add_image_size( 'large-thumbnail', 350, 350, true ); //
 add_image_size( 'gallery-thumbnail', 90, 90, true ); //
 add_image_size( 'home-thumbnail', 55, 55, array( 'center', 'top') ); //

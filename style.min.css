@@ -1209,7 +1209,7 @@ button:focus{outline:0}
 html[xmlns] .flexslider .slides{display:block}
 * html .flexslider .slides{height:1%}
 .no-js .flexslider .slides>li:first-child{display:block}
-.flexslider{margin:0 0 60px;background:#fff;border:4px solid #fff;position:relative;zoom:1;border-radius:4px;-webkit-box-shadow:"" 0 1px 4px rgba(0,0,0,0.2);-o-box-shadow:"" 0 1px 4px rgba(0,0,0,0.2);box-shadow:"" 0 1px 4px rgba(0,0,0,0.2)}
+.flexslider{margin:0;background:#fff;position:relative;zoom:1}
 .flexslider .slides{zoom:1}
 .flexslider .slides img{height:auto;-moz-user-select:none}
 .flex-viewport{max-height:2000px;-webkit-transition:all 1s ease;transition:all 1s ease}
@@ -1540,7 +1540,8 @@ body{font-size:15px;line-height:1.5}
 .left-cont-pad .entry-content{padding-bottom:50px}
 .left-cont-pad .entry-content h2{font-family:"Noto Serif TC",serif;font-weight:400;font-size:25px;line-height:1.2;margin:40px 0 10px}
 .left-cont-pad .entry-content h2 .short-descr{color:#666;font-family:"Noto Serif TC",serif;font-weight:400;font-size:25px;font-style:normal;border-bottom:0;padding:0;margin:0}
-.left-cont-pad .entry-content .service h2.redsubtitle{margin-top:10px}
+.left-cont-pad .entry-content .service h2.redsubtitle{margin:10px 0 20px 0;float:left}
+.left-cont-pad .entry-content .service h2.redsubtitle span{float:left;font-size:16px;color:#666}
 .accolades-page{width:100%;float:left;position:relative}
 .accolades-page .entry-content{background:#eaeaea;padding:30px;margin:20px 0}
 .accolades-page .entry-content p:last-child{margin-bottom:0}
@@ -1875,8 +1876,8 @@ img#wpstats{display:block;margin:0 auto 24px}
 @-o-viewport{width:device-width}
 @viewport{width:device-width}
 .redsubtitle{margin:0}
-.featured-portfolio{position:relative;overflow:hidden;height:380px;background-color:#c3c3c3;width:100%}
-.featured-portfolio div.image{width:100%;height:100%;float:left;background-size:cover;background-position:center;background-repeat:no-repeat;position:relative}
+.featured-portfolio{position:relative;overflow:hidden;height:auto;background-color:#c3c3c3;width:100%}
+.featured-portfolio div.image,.featured-portfolio img{width:100%;height:100%;float:left;background-size:cover;background-position:center;background-repeat:no-repeat;position:relative}
 .featured-portfolio img.placeholder{width:100%;height:auto;float:left}
 .featured-portfolio .wrapper{position:relative;height:100%}
 .featured-portfolio .fp-image-wrap{background-size:cover;background-color:#CCC;background-repeat:no-repeat;background-position:center;width:100%;height:100%;position:relative;z-index:15}
@@ -1898,8 +1899,8 @@ img#wpstats{display:block;margin:0 auto 24px}
 .featured-portfolio .flex-control-nav li a.flex-active{background:#da291c}
 .featured-portfolio .flex-control-nav li:hover a{opacity:.65}
 .featured-portfolio .flex-control-nav li:hover a.flex-active{opacity:1}
-.subpage-banner{width:100%;position:relative;overflow:hidden;margin-bottom:30px;height:380px;background-color:#c3c3c3}
-.subpage-banner div.image{width:100%;height:100%;float:left}
+.subpage-banner{width:100%;position:relative;overflow:hidden;margin-bottom:30px;background-color:#c3c3c3;float:left}
+.subpage-banner div.image,.subpage-banner img{width:100%}
 .subpage-banner .bgImage{background-size:cover;background-position:center;background-repeat:no-repeat}
 .subpage-banner .bgImage img.placeholder{width:100%;height:auto;float:left}
 .subpage-banner img.hero-image{width:100%;height:auto;float:left}
@@ -2234,8 +2235,6 @@ h2.persontitle{margin-top:20px;text-transform:capitalize}
 .accolades-page .accolades .imagebox{width:33.33%}
 .accolades-page .accolades .imagebox .caption .inner{font-size:1.2vw}
 .accolades-page .accolades .imagebox .caption .title2{font-size:1.5vw}
-.featured-portfolio{height:70vh}
-.subpage-banner{height:70vh}
 }@media screen and (min-width:600px) and (min-width:600px){.portfolio-blocks-wrapper .row{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .portfolio-blocks-wrapper .viewall-div{width:50%;float:left}
 }@media screen and (min-width:600px) and (min-width:900px){.portfolio-blocks-wrapper .viewall-div{width:20%}
@@ -2278,8 +2277,6 @@ body.tax-portcats .subnav li a.active{background:transparent;color:#fdcbcb}
 }@media(min-width:900px){.team-single-page .team-info-wrapper.half{width:74%;margin-bottom:0}
 .team-single-page .team-sidebar{width:22%;float:right;right:-15px}
 .accolades-page .accolades .imagebox .caption .title2{font-size:1.8vw}
-.featured-portfolio{height:80vh}
-.subpage-banner{height:75vh}
 .people-page .teamInfo{width:25%}
 }@media screen and (min-width:900px) and (min-width:600px){.jcarousel-skin-tango .jcarousel-container{padding-left:38px;padding-right:38px}
 }@media screen and (min-width:1000px){#single-proj-right.rightdiv{width:58%;float:right;padding-right:0}

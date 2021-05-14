@@ -1035,7 +1035,14 @@ body.subpage {
 }
 .left-cont-pad .entry-content .service {
 	h2.redsubtitle {
-		margin-top: 10px;
+		// margin-top: 10px;
+		margin: 10px 0 20px 0;
+		float: left;
+		span {
+			float: left;
+			font-size: 16px;
+			color: #666;
+		}
 	}
 }
 
@@ -3651,15 +3658,16 @@ img#wpstats {
 .featured-portfolio {
 	position: relative;
 	overflow:hidden;
-	height: 380px;
+	// height: 380px;
+	height: auto;
 	background-color: #c3c3c3;
 	@include tab {
-		height: 70vh;
+		// height: 70vh;
 	}
 	@include mid {
-		height: 80vh;
+		// height: 80vh;
 	}
-	div.image {
+	div.image, img {
 		width: 100%;
 		height: 100%;
 		float: left;
@@ -3836,18 +3844,19 @@ img#wpstats {
 	position: relative;
 	overflow:hidden;
 	margin-bottom: 30px;
-	height: 380px;
+	// height: 380px;
 	background-color: #c3c3c3;
+	float: left;
 	@include tab {
-		height: 70vh;
+		// height: 70vh;
 	}
 	@include mid {
-		height: 75vh;
+		// height: 75vh;
 	}
-	div.image {
+	div.image, img {
 		width: 100%;
-		height: 100%;
-		float: left;
+		// height: 100%;
+		
 	}
 	.bgImage {
 		background-size: cover;

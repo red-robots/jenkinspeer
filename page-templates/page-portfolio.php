@@ -8,9 +8,9 @@ get_header(); ?>
 <div id="primary" class="full-content-area clear">
 		<div id="content">
         
-        <div class="pageheader">
+        <!-- <div class="pageheader">
             <h2 class="category-title" style="display:inline-block;"><?php the_title(); ?></h2>
-        </div>
+        </div> -->
         
 
 

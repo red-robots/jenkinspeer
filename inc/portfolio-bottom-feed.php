@@ -86,7 +86,8 @@
               // foreach($projects as $p) { 
               while ($wp_query->have_posts()) : $wp_query->the_post();
               $post_id = $p->ID;
-              $title = $p->post_title;
+              // $title = $p->post_title;
+              $title = get_the_title();
               $post_thumbnail_id = get_post_thumbnail_id( $post_id );
               $taxonomy = 'portcats';
               $term = get_the_terms($post_id,$taxonomy);
