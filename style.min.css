@@ -1216,14 +1216,12 @@ html[xmlns] .flexslider .slides{display:block}
 .loading .flex-viewport{max-height:300px}
 .carousel li{margin-right:5px}
 .flex-direction-nav{*height:0}
-.flex-direction-nav a{text-decoration:none;display:block;width:40px;height:40px;margin:-20px 0 0;position:absolute;top:50%;z-index:10;overflow:hidden;opacity:0;cursor:pointer;color:rgba(0,0,0,0.8);text-shadow:1px 1px 0 rgba(255,255,255,0.3);-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
-.flex-direction-nav a:before{font-family:"flexslider-icon";font-size:40px;display:inline-block;content:'\f001';color:rgba(0,0,0,0.8);text-shadow:1px 1px 0 rgba(255,255,255,0.3)}
-.flex-direction-nav a.flex-next:before{content:'\f002'}
-.flex-direction-nav .flex-prev{left:-50px}
-.flex-direction-nav .flex-next{right:-50px;text-align:right}
-.flexslider:hover .flex-direction-nav .flex-prev{opacity:.7;left:10px}
+.flex-direction-nav a{text-decoration:none;display:block;width:40px;height:60px;margin:-20px 0 0;position:absolute;top:50%;z-index:10;overflow:hidden;cursor:pointer;color:rgba(0,0,0,0.8);text-shadow:1px 1px 0 rgba(255,255,255,0.3);-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
+.flex-direction-nav .flex-prev{left:0;background-image:url(images/flex-prev.png);text-indent:-9000px}
+.flex-direction-nav .flex-next{right:0;background-image:url(images/flex-next.png);text-indent:-9000px}
+.flexslider:hover .flex-direction-nav .flex-prev{opacity:.7}
 .flexslider:hover .flex-direction-nav .flex-prev:hover{opacity:1}
-.flexslider:hover .flex-direction-nav .flex-next{opacity:.7;right:10px}
+.flexslider:hover .flex-direction-nav .flex-next{opacity:.7}
 .flexslider:hover .flex-direction-nav .flex-next:hover{opacity:1}
 .flex-direction-nav .flex-disabled{opacity:0 !important;filter:alpha(opacity=0);cursor:default;z-index:-1}
 .flex-pauseplay a{display:block;width:20px;height:20px;position:absolute;bottom:5px;left:10px;opacity:.8;z-index:10;overflow:hidden;cursor:pointer;color:#000}
@@ -1539,7 +1537,7 @@ body{font-size:15px;line-height:1.5}
 .team-single-page .seemore a:hover{color:#ed948e}
 .left-cont-pad .entry-content{padding-bottom:50px}
 .left-cont-pad .entry-content h2{font-family:"Noto Serif TC",serif;font-weight:400;font-size:25px;line-height:1.2;margin:40px 0 10px}
-.left-cont-pad .entry-content h2 .short-descr{color:#666;font-family:"Noto Serif TC",serif;font-weight:400;font-size:25px;font-style:normal;border-bottom:0;padding:0;margin:0}
+.left-cont-pad .entry-content h2 .short-descr{color:#666;font-family:"Noto Serif TC",serif;font-weight:400;font-size:25px;font-style:normal;border-bottom:0;padding:0;margin:0;font-style:italic}
 .left-cont-pad .entry-content .service h2.redsubtitle{margin:10px 0 20px 0;float:left}
 .left-cont-pad .entry-content .service h2.redsubtitle span{float:left;font-size:16px;color:#666}
 .accolades-page{width:100%;float:left;position:relative}
@@ -1892,13 +1890,14 @@ img#wpstats{display:block;margin:0 auto 24px}
 .featured-portfolio .project-title a{color:#FFF;text-decoration:none}
 .featured-portfolio .project-title .arrow{position:absolute;right:0;top:4px;font-size:18px;margin-right:0;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 .featured-portfolio .project-title:hover .arrow{margin-right:-3px}
-.featured-portfolio .controls-container{position:absolute;left:0;bottom:0;z-index:45;width:100%;text-align:center}
+.featured-portfolio .controls-container{left:0;bottom:0;z-index:45;width:100%;text-align:center}
 .featured-portfolio .flex-control-nav{display:inline-block;width:auto;margin:0 auto;position:relative;bottom:0;text-align:center;top:-7px}
 .featured-portfolio .flex-control-nav li{display:inline-block;float:left;cursor:pointer;margin:5px 4px}
 .featured-portfolio .flex-control-nav li a{display:block;font-size:0;color:transparent;border-radius:0;background:#FFF;-webkit-box-shadow:none;box-shadow:none;width:8px;height:8px;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
 .featured-portfolio .flex-control-nav li a.flex-active{background:#da291c}
 .featured-portfolio .flex-control-nav li:hover a{opacity:.65}
 .featured-portfolio .flex-control-nav li:hover a.flex-active{opacity:1}
+.featured-portfolio .flex-control-nav.flex-control-paging{width:auto;position:absolute;bottom:40px;right:20px;top:auto;z-index:1000}
 .subpage-banner{width:100%;position:relative;overflow:hidden;margin-bottom:30px;background-color:#c3c3c3;float:left}
 .subpage-banner div.image,.subpage-banner img{width:100%}
 .subpage-banner .bgImage{background-size:cover;background-position:center;background-repeat:no-repeat}

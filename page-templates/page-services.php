@@ -66,7 +66,7 @@ get_header(); ?>
     <div class="service">
     	<a name="<?php echo $santigold; ?>"></a>
         <?php $title2 = get_field('service_short_description'); ?>
-        <h2 class="redsubtitle"><?php echo $posttitle; ?><?php if ($title2) { ?><span class="short-descr"> &ndash; <?php the_field('service_short_description'); ?></span><?php } ?></h2>
+        <h2 class="redsubtitle"><?php echo $posttitle; ?><?php if ($title2) { ?><span class="short-descr"><?php the_field('service_short_description'); ?></span><?php } ?></h2>
         <div class="service-right <?php //echo $widthClass ?>">
         	<div class="service-description">
             <?php if(get_field('featured_image')!="" ) : ?>

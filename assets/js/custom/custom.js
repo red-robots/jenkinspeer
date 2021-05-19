@@ -9,7 +9,7 @@ jQuery(document).ready(function ($) {
 
 	$('.flexslider').flexslider({
 		selector: '.slides > .slide-group',
-		directionNav: false,
+		// directionNav: false,
 		controlsContainer: "#slide-controller",
 		// smoothHeight: true
 	}); 
@@ -56,6 +56,23 @@ jQuery(document).ready(function ($) {
 	      }
 	    }
 	});
+
+
+	// document.addEventListener('facetwp-refresh', function() {
+
+	//     jQuery.ajax({
+	//         method: 'post',
+	//         url: ipAjaxVar.ajaxurl,
+	//         data: {
+	//             collection_id: ipc,
+	//             action: 'ac_ajax_custom_image',
+	//         }
+	//     }).done(function(msg) {
+	//         // Do something when done
+	//     });
+
+	//     e.preventDefault();
+	// });
 
 
 	/* Slick Carousel */

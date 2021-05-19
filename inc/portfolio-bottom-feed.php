@@ -88,24 +88,50 @@
               $post_id = $p->ID;
               // $title = $p->post_title;
               $title = get_the_title();
+              if( have_rows('category_based_image') ) : while( have_rows('category_based_image') ): the_row();
+              	$cat = get_sub_field('category');
+              	$catImg = get_sub_field('image');
+              	// echo '<pre>';
+		             //  print_r($catImg);
+		             //  echo '</pre>';
+              	//echo $catImg['sizes']['thumbnail_large'];
+              endwhile; endif;
+              // echo '<pre>';
+              // print_r($catImg);
+              // echo '</pre>';
+
+              if (isset($_GET['_project_type']) && $catImg != '') {
+				    //echo $_GET['_project_type'];
+              		$imgSrc = $catImg['sizes']['large-thumbnail'];
+              		echo $imgSrc;
+              		
+				} else {
+				    // Fallback behaviour goes here
+				    $imgSrc = wp_get_attachment_image_src($post_thumbnail_id,'thumbnail_large');
+				}
+				// echo $imgSrc;
               $post_thumbnail_id = get_post_thumbnail_id( $post_id );
               $taxonomy = 'portcats';
               $term = get_the_terms($post_id,$taxonomy);
               $term_id = ( isset($term->term_id) && $term->term_id ) ?  $term->term_id: 0;
               $pagelink = get_the_permalink( $post_id );
-              $imgSrc = wp_get_attachment_image_src($post_thumbnail_id,'thumbnail_large');
+              
               $img_url = ($imgSrc) ? $imgSrc[0] : get_bloginfo('template_url') . '/images/default-thumb.png';
               $post_edit_link = get_edit_post_link($post_id);
               // echo '<pre>';
               // print_r($pagelink);
               // echo '</pre>';
-              ?>
+
+//echo ac_ajax_custom_image_fetch();              ?>
               <div id="proj-<?php echo $post_id?>" class="flexcol">
                   <div class="inside clear">
                       <a class="boxlink animated fadeIn" href="<?php echo $pagelink; ?>">
-                          <span class="thumbnail" style="background-image:url('<?php echo $img_url?>')">
-                              <?php  if ( has_post_thumbnail($post_id) ) { ?>
-                                  <?php echo get_the_post_thumbnail($post_id,'thumbnail_large'); ?>
+                          <span class="thumbnail" style="background-image:url('<?php echo $img_url; ?>')">
+                              <?php  //if ( has_post_thumbnail($post_id) ) { 
+                              	if( $img_url ) { ?>
+                                  <?php //echo get_the_post_thumbnail($post_id,'thumbnail_large'); ?>
+                                  <?php  ?>
+                                  <img src="<?php echo $img_url; ?>">
                               <?php } else { ?>
                                   <img src="<?php echo get_bloginfo('template_url'); ?>/images/default-thumb.png" width="130px" height="130px"/>
                               <?php } ?>

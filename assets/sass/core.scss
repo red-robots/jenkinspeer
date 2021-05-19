@@ -1030,6 +1030,7 @@ body.subpage {
 			border-bottom: none;
 			padding: 0 0;
 			margin: 0 0;
+			font-style: italic;
 		}
 	}
 }
@@ -3783,7 +3784,7 @@ img#wpstats {
 		}
 	}
 	.controls-container {
-		position: absolute;
+		// position: absolute;
 		left: 0;
 		bottom: 0;
 		z-index: 45;
@@ -3834,6 +3835,14 @@ img#wpstats {
 	    			}
 				}
 			}
+		}
+		&.flex-control-paging {
+			width: auto;
+			position: absolute;
+			bottom: 40px;
+			right: 20px;
+			top: auto;
+			z-index: 1000;
 		}
 	}
 }

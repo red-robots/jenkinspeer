@@ -113,6 +113,12 @@ function custom_upload_mimes ( $existing_mimes=array() ) {
 	return $existing_mimes;
 }
 
+
+
+// wp_localize_script('main', 'ipAjaxVar', array(
+//     'ajaxurl' => admin_url('admin-ajax.php')
+// ));
+
 /* ==========================
 		
 			Custom Post Types 
