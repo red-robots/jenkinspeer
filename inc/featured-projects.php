@@ -34,7 +34,7 @@ if ( $featured ) {  ?>
 			<!-- </li> -->
 			<?php } ?>
 		<?php } ?>
-		<div class="controls-container"><div id="slide-controller" class="wrapper"></div></div>	
+		<div class="controls-container"><div id="slide-controller" class=""></div></div>	
 	</div>
 
 </div>

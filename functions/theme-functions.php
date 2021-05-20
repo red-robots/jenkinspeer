@@ -115,10 +115,31 @@ function custom_upload_mimes ( $existing_mimes=array() ) {
 
 
 
-// wp_localize_script('main', 'ipAjaxVar', array(
-//     'ajaxurl' => admin_url('admin-ajax.php')
-// ));
+/**
+ * To access the data within the "Query Arguments" box, use:
+ * $this->http_params['choose_city']
+ */
 
+add_action( 'wp_footer', function() {
+    $choose_city = get_field( 'choose_city' );
+    if( have_rows('category_based_image') ) : while( have_rows('category_based_image') ): the_row();
+	  	$cat = get_sub_field('category');
+	  	$catImg = get_sub_field('image');
+	  	// echo '<pre>';
+	         //  print_r($catImg);
+	         //  echo '</pre>';
+	  	//echo $catImg['sizes']['thumbnail_large'];
+	  endwhile; endif;
+?>
+<script>
+(function($) {
+    $(document).on('facetwp-refresh', function() {
+        FWP_HTTP.choose_cat = <?php echo json_encode( $catImg ); ?>;
+     });
+})(jQuery);
+</script>
+<?php
+}, 100 );
 /* ==========================
 		
 			Custom Post Types 

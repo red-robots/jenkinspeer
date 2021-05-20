@@ -30,7 +30,7 @@ get_header(); ?>
     </div><!-- portfolio content -->
 <?php endwhile; ?>
 
-<?php get_template_part('inc/portfolio-bottom-feed-backup'); ?>
+<?php get_template_part('inc/portfolio-bottom-feed-new'); ?>
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
