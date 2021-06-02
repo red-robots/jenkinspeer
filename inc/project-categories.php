@@ -18,7 +18,8 @@ if($categories) { ?>
 		// echo '</pre>';
 		$cat_name = $cat->name;
 		$cat_slug = $cat->slug;
-		$url =  get_bloginfo('url').'/portfolio/?_project_type='.$cat_slug;
+		// $url =  get_bloginfo('url').'/portfolio/?_project_type='.$cat_slug;
+		$url = get_bloginfo('url') . '/portfolio-categories/' . $cat_slug;
 		$catImg = get_field('category_featured_image_to_show_on_homepage', $cat->taxonomy.'_'.$cat->term_id);
 		if(!$catImg){
 			$catImg = get_field('category_featured_image', $cat->taxonomy.'_'.$cat->term_id);

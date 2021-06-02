@@ -2088,7 +2088,7 @@ body.single-portfolio .page-container .content-wrapper{padding-top:50px}
 .spinnerDiv.red .lds-roller{display:inline-block;position:absolute;top:2%;left:50%;-webkit-transform:translate(-50%,-2%);transform:translate(-50%,-2%)}
 .spinnerDiv.red .lds-roller div:after{background:#da291c}
 .facetwp-facet{width:auto;display:inline-block;margin:0 10px}
-.facetwp-facet select.facetwp-dropdown{padding:10px}
+.facetwp-facet select.facetwp-dropdow,.facetwp-facet select.dynamic{padding:10px}
 body.page-template-page-accolades .entry-content{background-color:#fff}
 @media(min-width:480px){.team-single-page .projects .title span{font-size:3.3vw}
 .people-page .teamInfo{width:50%}
