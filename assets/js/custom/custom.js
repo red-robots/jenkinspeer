@@ -6,6 +6,19 @@ jQuery(document).ready(function ($) {
 	// 	controlsContainer: "#slide-controller",
 	// 	smoothHeight: true
 	// }); 
+		// initialize Isotope
+	var $container = $('#container').isotope({
+	  // options
+	  itemSelector: '.item',
+	  masonry: {
+		/*columnWidth: 200,*/
+		gutter: 30
+				}
+	});
+	// layout Isotope again after all images have loaded
+	$container.imagesLoaded( function() {
+	  $container.isotope('layout');
+	});
 
 	$('.flexslider').flexslider({
 		selector: '.slides > .slide-group',
@@ -18,6 +31,8 @@ jQuery(document).ready(function ($) {
 		$(this).toggleClass('open');
 		$("#site-navigation").toggleClass('menu-open');
 	});
+
+
 
 	new WOW().init();
 

@@ -68,20 +68,19 @@
 		
 		
 		
-		// other scripts...
-		// wp_register_script(
-		// 	'masonary',
-		// 	get_bloginfo('template_directory') . '/js/isotope.js',
-		// 	array('jquery') );
-		// wp_enqueue_script('masonary');
+	
+		wp_register_script(
+			'masonary',
+			get_bloginfo('template_directory') . '/js/isotope.js',
+			array('jquery') );
+		wp_enqueue_script('masonary');
 
 
-    // other scripts...
-    // wp_register_script(
-    //   'imagesloaded',
-    //   get_bloginfo('template_directory') . '/js/images-loaded.js',
-    //   array('jquery') );
-    // wp_enqueue_script('imagesloaded');
+    wp_register_script(
+      'imagesloaded',
+      get_bloginfo('template_directory') . '/js/images-loaded.js',
+      array('jquery') );
+    wp_enqueue_script('imagesloaded');
 
     // other scripts...
     // wp_register_script(

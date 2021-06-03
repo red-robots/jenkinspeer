@@ -16,7 +16,16 @@ get_header(); ?>
 
 				
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <h1 class="news-title"><?php the_title(); ?></h1>
+                <header class="project-header-title">
+       
+			        <h1 class="main-proj-title"><?php the_title(); ?></h1>
+			        <?php if(get_field('second_title')!="") { ?>
+			        <div class="sec-proj-title"><?php the_field('second_title'); ?></div>
+			        <?php } ?>
+			        <?php if(get_field('third_title')!="") { ?>
+			        <div class="third-proj-title"><?php the_field('third_title'); ?></div>
+			        <?php } ?>
+			      </header>
                 
                 <div class="entry-content newpush">
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?>
