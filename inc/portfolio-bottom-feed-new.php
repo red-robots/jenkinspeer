@@ -140,7 +140,10 @@ $serviceCat = get_terms( array(
                   <div class="inside clear">
                       <a class="boxlink animated fadeIn" href="<?php echo $pagelink; ?>">
                           <span class="thumbnail" style="background-image:url('<?php echo $img_url?>')">
-                              <?php  if ( has_post_thumbnail($post_id) ) { ?>
+                              <?php  
+                              if( $useImg != '' ) { ?>
+                                <img src="<?php echo $img_url; ?>">
+                              <?php } elseif ( has_post_thumbnail($post_id) ) { ?>
                                   <?php echo get_the_post_thumbnail($post_id,'thumbnail_large'); ?>
                               <?php } else { ?>
                                   <img src="<?php echo get_bloginfo('template_url'); ?>/images/default-thumb.png" width="130px" height="130px"/>
