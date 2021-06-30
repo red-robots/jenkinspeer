@@ -82,6 +82,14 @@
       array('jquery') );
     wp_enqueue_script('imagesloaded');
 
+
+
+    wp_register_script(
+      'blocks',
+      get_bloginfo('template_directory') . '/js/blocks.js',
+      array('jquery') );
+    wp_enqueue_script('blocks');
+
     // other scripts...
     // wp_register_script(
     //   'custom',

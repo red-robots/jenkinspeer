@@ -32,7 +32,7 @@ jQuery(document).ready(function ($) {
 		$("#site-navigation").toggleClass('menu-open');
 	});
 
-
+	$('.js-blocks').matchHeight();
 
 	new WOW().init();
 

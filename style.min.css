@@ -2211,8 +2211,6 @@ h2.persontitle{margin-top:20px;text-transform:capitalize}
 .home-column-text .flexrow{margin-left:-30px;margin-right:-30px}
 .home-column-text .wrapper{padding-top:50px;padding-bottom:50px}
 .home-column-text .column .inside{padding:0 30px}
-.home-column-text .column.left .inside{padding:5vw}
-.home-column-text.half .column{width:50%;float:left}
 .section{padding-bottom:70px}
 .latest-news-list .flexcol{width:33.3%}
 .view-all-button{text-align:right;margin-top:30px}
@@ -2273,6 +2271,8 @@ body.tax-portcats .subnav li a.active{background:transparent;color:#fdcbcb}
 #flexcarousel.flexslider li{width:16.66666%}
 .portfolio-categories-list .flexcol{width:24.9%;margin-bottom:30px}
 .portfolio-categories-list .inside{padding-left:15px;padding-right:15px}
+.home-column-text .column.left .inside{padding:5vw}
+.home-column-text.half .column{width:50%;float:left}
 .three-column-wrapper .flexcol{width:33.3%}
 .three-column-wrapper .thumbnail{height:230px}
 .swiper-container{height:600px}

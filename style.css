@@ -5692,7 +5692,7 @@ body.home .page-container.wrapper { max-width: 100%; padding-left: 0; padding-ri
 
 .home-column-text .column.left .inside { width: 100%; padding: 30px; }
 
-@media screen and (min-width: 600px) { .home-column-text .column.left .inside { padding: 5vw; } }
+@media screen and (min-width: 900px) { .home-column-text .column.left .inside { padding: 5vw; } }
 
 .home-column-text .column.left p { margin-top: 0; margin-bottom: 10px; }
 
@@ -5702,7 +5702,7 @@ body.home .page-container.wrapper { max-width: 100%; padding-left: 0; padding-ri
 
 .home-column-text.half .column { width: 100%; }
 
-@media screen and (min-width: 600px) { .home-column-text.half .column { width: 50%; float: left; } }
+@media screen and (min-width: 900px) { .home-column-text.half .column { width: 50%; float: left; } }
 
 .section { padding-top: 50px; padding-bottom: 50px; }
 

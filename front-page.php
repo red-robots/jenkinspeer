@@ -14,17 +14,18 @@ get_header(); ?>
 		<?php if ( $mission_image || $mission_text ) { ?>
 		<section class="home-column-text clear <?php echo $row1CLass ?>">
 			<div class="full-wrapper">
-				<div class="flexrow clear">
+				<div class="flexrowz clear">
 					<?php if ($mission_image) { ?>
-					<div class="column right">
-						<div class="inside clear" style="background-image:url('<?php echo $mission_image['url'] ?>')">
-							<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true">
+					<div class="column right js-blocks">
+						<div class="inside clear" style="background-image:url('<?php //cho $mission_image['url'] ?>')">
+							<!-- <img src="<?php echo $placeholder ?>" alt="" aria-hidden="true"> -->
+							<img src="<?php echo $mission_image['url'] ?>">
 						</div>
 					</div>
 					<?php } ?>
 					
 					<?php if ($mission_text) { ?>
-					<div class="column left">
+					<div class="column left js-blocks">
 						<div class="inside clear"><?php echo $mission_text; ?></div>
 					</div>
 					<?php } ?>

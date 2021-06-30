@@ -30,6 +30,7 @@ jQuery(document).ready(function ($) {
     $(this).toggleClass('open');
     $("#site-navigation").toggleClass('menu-open');
   });
+  $('.js-blocks').matchHeight();
   new WOW().init();
   /*
   *

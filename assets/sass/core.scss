@@ -4113,7 +4113,7 @@ body.home .page-container {
 			.inside {
 				width: 100%;
 				padding: 30px;
-				@media screen and (min-width: $tabwidth) {
+				@media screen and (min-width: $midwidth) {
 					padding: 5vw;
 				}
 			}
@@ -4144,7 +4144,7 @@ body.home .page-container {
 	&.half {
 		.column {
 			width: 100%;
-			@media screen and (min-width: $tabwidth) {
+			@media screen and (min-width: $midwidth) {
 				width: 50%;
 				float: left;
 			}
